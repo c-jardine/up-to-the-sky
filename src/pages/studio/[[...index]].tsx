@@ -8,7 +8,7 @@
  */
 
 import { NextStudio } from 'next-sanity/studio';
-import sanityConfig from '../../src/studio/sanity.config';
+import sanityConfig from '../../studio/sanity.config';
 
 const StudioPage = () => {
   return <NextStudio config={sanityConfig} />;

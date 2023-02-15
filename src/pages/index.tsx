@@ -22,7 +22,7 @@ const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const Home = () => {
   return (
-    <Stack w="full" spacing={28} my={16}>
+    <Stack w="full" spacing={28} mb={16}>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         position="relative"
@@ -35,6 +35,7 @@ const Home = () => {
       >
         <Box
           w={{ md: 'xl' }}
+          pt={16}
           h="max"
           bg="white"
           px={{ base: 4, md: 12 }}
@@ -86,12 +87,13 @@ const Home = () => {
         </Box>
       </Stack>
 
-      <Box position="relative" overflow="hidden">
-        <SimpleGrid columns={2} h="sm">
+      <Box position="relative" overflow={{ lg: 'hidden' }}>
+        <SimpleGrid columns={2} h="sm" display={{ base: 'none', lg: 'grid' }}>
           <Box bg="#5282c1" />
           <Box bg="white" />
         </SimpleGrid>
         <Box
+          display={{ base: 'none', lg: 'grid' }}
           position="absolute"
           top={0}
           left="50%"
@@ -100,21 +102,23 @@ const Home = () => {
           bg="#5282c1"
         />
         <SimpleGrid
-          mt={-72}
+          mt={{ lg: -72 }}
           position="relative"
           columns={{ base: 1, lg: 2 }}
           mx="auto"
           maxW="6xl"
           w="full"
+          px={{ base: 4, xl: 0 }}
         >
           <Stack
             spacing={4}
-            px={{ base: 4, md: 12 }}
+            px={{ base: 4, lg: 12 }}
+            // pt={{ lg: 12 }}
             py={12}
             shadow="2xl"
             bg="white"
             h="max"
-            mt={16}
+            mt={{ lg: 16 }}
             // ml={8}
             zIndex={1}
           >
@@ -142,13 +146,13 @@ const Home = () => {
               <ChevronRightIcon mt={-1} boxSize={5} />
             </Link>
           </Stack>
-          <Box ml={-16}>
+          <Box ml={{ lg: -16 }}>
             <ChakraImage src="/images/kristin-1.jpg" />
           </Box>
         </SimpleGrid>
       </Box>
 
-      <Box px={{ base: 4, lg: 0 }} maxW="6xl" w="full" alignSelf="center">
+      <Box px={{ base: 4, xl: 0 }} maxW="6xl" w="full" alignSelf="center">
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           shadow="2xl"
