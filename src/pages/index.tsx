@@ -22,7 +22,7 @@ const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const Home = () => {
   return (
-    <Stack w="full" spacing={28} mb={16}>
+    <Stack w="full" spacing={28} mb={16} pt={{ base: 0, md: 32 }}>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         position="relative"
@@ -43,7 +43,7 @@ const Home = () => {
           position="relative"
           zIndex={1}
           borderBottomWidth={8}
-          borderColor="#5282c1"
+          borderColor="primary.500"
           shadow="2xl"
         >
           <ChakraImage
@@ -57,7 +57,7 @@ const Home = () => {
             In loving memory of Kristin Renee Cantrell Hill
           </Text>
           <Text
-            color="#5282c1"
+            color="primary.500"
             fontSize="lg"
             fontWeight="semibold"
             letterSpacing="wide"
@@ -89,7 +89,7 @@ const Home = () => {
 
       <Box position="relative" overflow={{ lg: 'hidden' }}>
         <SimpleGrid columns={2} h="sm" display={{ base: 'none', lg: 'grid' }}>
-          <Box bg="#5282c1" />
+          <Box bg="primary.500" />
           <Box bg="white" />
         </SimpleGrid>
         <Box
@@ -99,7 +99,7 @@ const Home = () => {
           left="50%"
           h="sm"
           w="sm"
-          bg="#5282c1"
+          bg="primary.500"
         />
         <SimpleGrid
           mt={{ lg: -72 }}
@@ -138,7 +138,7 @@ const Home = () => {
               as={NextLink}
               href="/obituary"
               fontWeight="semibold"
-              color="#5282c1"
+              color="primary.500"
               transition="200ms ease-in-out"
               _hover={{ textDecoration: 'none', filter: 'brightness(120%)' }}
             >
@@ -157,7 +157,7 @@ const Home = () => {
           columns={{ base: 1, lg: 2 }}
           shadow="2xl"
           borderWidth={{ base: 6, md: 12 }}
-          borderColor="#5282c1"
+          borderColor="primary.500"
           px={{ base: 4, md: 12 }}
           py={12}
           gap={16}
@@ -166,7 +166,7 @@ const Home = () => {
             <Heading
               as="h2"
               fontSize="lg"
-              color="#5282c1"
+              color="primary.500"
               textTransform="uppercase"
             >
               Donate Now
@@ -183,7 +183,7 @@ const Home = () => {
                 preference being given (when possible) to a Badin High School
                 graduate.
               </Text>
-              <Text color="#5282c1" fontWeight="semibold">
+              <Text color="primary.500" fontWeight="semibold">
                 No act of generosity is too small to make a difference.
               </Text>
               <Text pt={4}>

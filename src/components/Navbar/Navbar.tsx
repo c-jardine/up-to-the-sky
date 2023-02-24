@@ -1,136 +1,48 @@
-import { HamburgerIcon } from '@chakra-ui/icons';
+import {
+  ChevronDownIcon,
+  ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
+} from '@chakra-ui/icons';
 import {
   Box,
   Button,
-  Container,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  HStack,
+  Collapse,
+  Flex,
+  Icon,
   IconButton,
   Image,
+  Link,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   Stack,
+  Text,
+  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import React from 'react';
 
-const links = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'Events',
-    href: '/events',
-  },
-  {
-    label: 'About',
-    href: '/about',
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
-];
+export default function WithSubnavigation() {
+  const { isOpen, onToggle } = useDisclosure();
 
-const DesktopNav = () => {
-  const router = useRouter();
   return (
-    <Box
-      display={{ base: 'none', md: 'flex' }}
-      justifyContent="space-between"
-      w="full"
-    >
-      <HStack
-        spacing={2}
-        flexGrow={1}
-        fontWeight="semibold"
-        letterSpacing="wide"
-        textTransform="uppercase"
+    <Box>
+      <Flex
+        bg="white"
+        color="blackAlpha.700"
+        minH={'60px'}
+        py={{ base: 2 }}
+        px={{ base: 4 }}
+        borderBottom={1}
+        borderStyle={'solid'}
+        borderColor="blackAlpha.200"
+        align={'center'}
       >
-        {links.map((link, index) => (
-          <Button
-            key={index}
-            variant="nav"
-            onClick={() => void router.push(link.href)}
-          >
-            {link.label}
-          </Button>
-        ))}
-      </HStack>
-      <Button variant="primary" rounded="sm">
-        Donate
-      </Button>
-    </Box>
-  );
-};
-
-const MobileNav = () => {
-  const router = useRouter();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
-
-  const _handleOnClick = (href: string) => {
-    void router.push(href);
-    onClose();
-  };
-  return (
-    <Box
-      display={{ base: 'flex', md: 'none' }}
-      justifyContent="flex-end"
-      w="full"
-    >
-      <IconButton
-        aria-label="Open menu"
-        icon={<HamburgerIcon />}
-        ref={btnRef}
-        onClick={onOpen}
-      />
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        finalFocusRef={btnRef}
-        onClose={onClose}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Menu</DrawerHeader>
-          <DrawerBody>
-            <Stack>
-              {links.map((link, index) => (
-                <Button
-                  key={index}
-                  variant="nav"
-                  justifyContent="flex-start"
-                  onClick={() => _handleOnClick(link.href)}
-                >
-                  {link.label}
-                </Button>
-              ))}
-            </Stack>
-          </DrawerBody>
-          <DrawerFooter>
-            <Button variant="primary" w="full">
-              Donate
-            </Button>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </Box>
-  );
-};
-
-const Navbar = () => {
-  return (
-    <Box h={16} bg="white" borderBottomWidth={1}>
-      <Container maxW="7xl" w="full" h="full">
-        <HStack w="full" h="full" spacing={8}>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: 'space-between', md: 'start' }}
+          alignItems="center"
+        >
           <Image
             src="/images/logo-butterfly.png"
             alt='A butterfly with a grey cancer ribbon for a body, featuring the text "Up to the Sky"'
@@ -138,12 +50,233 @@ const Navbar = () => {
             h={12}
             filter="drop-shadow(2px 2px 3px #5282c1)"
           />
-          <MobileNav />
-          <DesktopNav />
-        </HStack>
-      </Container>
+
+          <IconButton
+            display={{ base: 'flex', md: 'none' }}
+            onClick={onToggle}
+            icon={
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            }
+            variant={'ghost'}
+            aria-label={'Toggle Navigation'}
+          />
+
+          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+            <DesktopNav />
+          </Flex>
+        </Flex>
+
+        <Button
+          as={'a'}
+          href={'#'}
+          variant="primary"
+          display={{ base: 'none', md: 'flex' }}
+        >
+          Donate
+        </Button>
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav />
+      </Collapse>
     </Box>
+  );
+}
+
+const DesktopNav = () => {
+  return (
+    <Stack direction={'row'} spacing={4}>
+      {NAV_ITEMS.map((navItem) => (
+        <Box key={navItem.label}>
+          <Popover trigger={'hover'} placement={'bottom-start'}>
+            <PopoverTrigger>
+              <Link
+                p={2}
+                href={navItem.href ?? '#'}
+                fontWeight={500}
+                color="blackAlpha.700"
+                _hover={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}
+              >
+                {navItem.label}
+              </Link>
+            </PopoverTrigger>
+
+            {navItem.children && (
+              <PopoverContent
+                border={0}
+                boxShadow={'xl'}
+                bg="white"
+                p={4}
+                rounded="none"
+                minW={'sm'}
+              >
+                <Stack>
+                  {navItem.children.map((child) => (
+                    <DesktopSubNav key={child.label} {...child} />
+                  ))}
+                </Stack>
+              </PopoverContent>
+            )}
+          </Popover>
+        </Box>
+      ))}
+    </Stack>
   );
 };
 
-export default Navbar;
+const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  return (
+    <Link
+      href={href}
+      role={'group'}
+      display={'block'}
+      p={2}
+      rounded="none"
+      _hover={{ bg: 'primary.50' }}
+    >
+      <Stack direction={'row'} align={'center'}>
+        <Box>
+          <Text
+            transition={'all .3s ease'}
+            _groupHover={{ color: 'primary.500' }}
+            fontWeight={500}
+          >
+            {label}
+          </Text>
+          <Text fontSize={'sm'} fontWeight="normal">
+            {subLabel}
+          </Text>
+        </Box>
+        <Flex
+          transition={'all .3s ease'}
+          transform={'translateX(-10px)'}
+          opacity={0}
+          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+          justify={'flex-end'}
+          align={'center'}
+          flex={1}
+        >
+          <Icon color={'primary.500'} w={5} h={5} as={ChevronRightIcon} />
+        </Flex>
+      </Stack>
+    </Link>
+  );
+};
+
+const MobileNav = () => {
+  return (
+    <Stack
+      bg={useColorModeValue('white', 'gray.800')}
+      p={4}
+      display={{ md: 'none' }}
+    >
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} {...navItem} />
+      ))}
+    </Stack>
+  );
+};
+
+const MobileNavItem = ({ label, children, href }: NavItem) => {
+  const { isOpen, onToggle } = useDisclosure();
+
+  return (
+    <Stack spacing={4} onClick={children && onToggle}>
+      <Flex
+        py={2}
+        as={Link}
+        href={href ?? '#'}
+        justify={'space-between'}
+        align={'center'}
+        _hover={{
+          textDecoration: 'none',
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue('gray.600', 'gray.200')}
+        >
+          {label}
+        </Text>
+        {children && (
+          <Icon
+            as={ChevronDownIcon}
+            transition={'all .25s ease-in-out'}
+            transform={isOpen ? 'rotate(180deg)' : ''}
+            w={6}
+            h={6}
+          />
+        )}
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={'solid'}
+          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          align={'start'}
+        >
+          {children &&
+            children.map((child) => (
+              <Link key={child.label} py={2} href={child.href}>
+                {child.label}
+              </Link>
+            ))}
+        </Stack>
+      </Collapse>
+    </Stack>
+  );
+};
+
+interface NavItem {
+  label: string;
+  subLabel?: string;
+  children?: Array<NavItem>;
+  href?: string;
+}
+
+const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Understanding Glioblastoma',
+    children: [
+      {
+        label: 'Glioblastoma 101',
+        subLabel: 'Learn more about this form of brain cancer',
+        href: '/glioblastoma',
+      },
+      {
+        label: 'Symptoms',
+        href: '/symptoms',
+      },
+      {
+        label: 'Causes',
+        href: '/causes',
+      },
+      {
+        label: 'Diagnosis',
+        href: '/diagnosis',
+      },
+      {
+        label: 'Treatments',
+        href: '/treatment',
+      },
+    ],
+  },
+  {
+    label: 'Events',
+    href: '/events',
+  },
+  {
+    label: 'About Us',
+    href: '/about',
+  },
+];
