@@ -16,19 +16,16 @@ const InformationLayout = (props: InformationalLayoutProps) => {
     <Stack spacing={28} alignItems="center" mb={24}>
       <Box w="full">
         <Box w="full" h={40} bg="primary.400" />
-        <Container
-          maxW="8xl"
-          w="full"
-          mt={-28}
-          px={{ base: 4, sm: 8, md: 20 }}
-          py={12}
-          bg="white"
-          shadow="lg"
-        >
-          <Stack>
+        <Container maxW="8xl" w="full" mt={{ base: -16, md: -28 }}>
+          <Stack
+            bg="white"
+            shadow="lg"
+            px={{ base: 4, sm: 8, md: 20 }}
+            py={{ base: 4, md: 12 }}
+          >
             <Text
               className={spectral.className}
-              fontSize="xl"
+              fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
               fontWeight="bold"
               fontStyle="italic"
               color="primary.500"
@@ -39,7 +36,7 @@ const InformationLayout = (props: InformationalLayoutProps) => {
               as="h1"
               fontWeight="black"
               letterSpacing="wide"
-              fontSize={{ base: '4xl', md: '5xl' }}
+              fontSize={{ base: '2xl', sm: '3xl', md: '5xl' }}
             >
               {props.title}
             </Heading>
