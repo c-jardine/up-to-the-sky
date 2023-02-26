@@ -24,13 +24,13 @@ const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 const Home = () => {
   const router = useRouter();
   return (
-    <Stack w="full" spacing={28} mb={16} pt={{ base: 0, md: 32 }}>
+    <Stack w="full" spacing={28} mb={16}>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         position="relative"
         h={{ md: 'container.sm' }}
         alignItems={{ md: 'center' }}
-        maxW="6xl"
+        maxW="1920px"
         w="full"
         mx="auto"
         spacing={0}
@@ -84,7 +84,7 @@ const Home = () => {
         <Box
           position={{ base: 'relative', md: 'absolute' }}
           h={{ base: 64, md: 'container.sm' }}
-          w={{ base: 'full', md: '4xl' }}
+          w="full"
           left={{ md: '250px' }}
           top={{ md: 0 }}
           shadow="2xl"
