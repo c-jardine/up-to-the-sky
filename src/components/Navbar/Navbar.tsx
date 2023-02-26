@@ -124,7 +124,20 @@ const DesktopNav = () => {
   return (
     <Stack direction="row" spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box position="relative" key={navItem.label} role="group">
+          <Box
+            position="absolute"
+            bottom={-2}
+            left="50%"
+            w={8}
+            h="0.5"
+            bg="secondary.500"
+            transform="translate(-50%) scaleX(0)"
+            transition="200ms ease-in-out"
+            _groupHover={{
+              transform: 'translate(-50%) scaleX(1)',
+            }}
+          />
           <Box ref={btnRef} onClick={navItem.children && onOpen}>
             <Link
               p={2}
@@ -132,10 +145,6 @@ const DesktopNav = () => {
               fontSize="xl"
               letterSpacing="wider"
               color="primary.700"
-              _hover={{
-                textDecoration: 'none',
-                color: 'black',
-              }}
               aria-label={navItem.children && 'Toggle sub-navigation'}
             >
               {navItem.label}
