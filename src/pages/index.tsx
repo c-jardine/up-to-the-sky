@@ -16,11 +16,13 @@ import {
 import { Spectral } from '@next/font/google';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import hero from '../../public/images/home-hero.jpg';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const Home = () => {
+  const router = useRouter();
   return (
     <Stack w="full" spacing={28} mb={16} pt={{ base: 0, md: 32 }}>
       <Stack
@@ -67,7 +69,11 @@ const Home = () => {
             today!
           </Text>
           <HStack mt={8}>
-            <Button variant="primary" flexBasis="50%">
+            <Button
+              variant="primary"
+              flexBasis="50%"
+              onClick={() => void router.push('/glioblastoma')}
+            >
               Learn more
             </Button>
             <Button variant="secondary" flexBasis="50%">

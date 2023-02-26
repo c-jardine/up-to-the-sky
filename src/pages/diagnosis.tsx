@@ -7,10 +7,7 @@ const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const DiagnosisPage = () => {
   return (
-    <InformationLayout
-      smallTitle="About Glioblastoma"
-      title="Glioblastoma Diagnosis"
-    >
+    <InformationLayout smallTitle="About Glioblastoma" title="Diagnosis">
       <Container maxW="2xl" w="full">
         <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
           <Text

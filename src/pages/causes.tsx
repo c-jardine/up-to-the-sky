@@ -24,8 +24,10 @@ const DiagnosisPage = () => {
             fontSize={{ base: '2xl', sm: '3xl' }}
             color="primary.500"
           >
-            Unfortunately, experts aren&apos;t sure what causes glioblastoma.
-            However, certain things may make you more likely to have one.
+            The exact cause of glioblastoma is not known. Some risk factors may
+            make someone more likely to develop high-grade gliomas like
+            glioblastoma, but the majority of patients have no family history or
+            identifiable risk factors.
           </Text>
         </Stack>
 
@@ -36,12 +38,12 @@ const DiagnosisPage = () => {
           <Stack spacing={8}>
             <Stack>
               <Heading as="h3" fontSize="2xl">
-                Prior radiation to the head
+                Previous exposure to radiation
               </Heading>
               <Text>
-                If you previously got radiation to treat brain tumors or cancers
-                that may have spread to the area, it can increase your risk for
-                glioblastoma.
+                Exposure to ionizing radiation as a result of radiation therapy
+                for childhood brain tumors or leukemia is a risk factor for
+                high-grade gliomas like glioblastoma.
               </Text>
             </Stack>
             <Stack>
@@ -55,9 +57,13 @@ const DiagnosisPage = () => {
                 <ListItem>Turcot syndrome</ListItem>
                 <ListItem>Neurofibromatosis type 1</ListItem>
                 <ListItem>Li-Fraumeni syndrome</ListItem>
+                <ListItem>Lynch syndrome</ListItem>
+                <ListItem>
+                  Constitutional mismatch repair deficiency syndrome
+                </ListItem>
               </UnorderedList>
               <Text>
-                Exposure to chemicals and other cancer-causing agents may also
+                Exposure to chemicals and other cancer-causing agents may
                 increase your risk for genetic mutations.
               </Text>
             </Stack>
@@ -66,23 +72,17 @@ const DiagnosisPage = () => {
                 Age and gender
               </Heading>
               <Text>
-                It&apos;s more common among those who are 50 or above. The
-                average age for diagnosis is 64. Additionally, men are more
-                likely to develop glioblastoma.
+                Glioblastomas can occur at any age but are more common in older
+                patients between the ages of 65 and 74. The median age of a
+                glioblastoma diagnosis is 65.
               </Text>
-            </Stack>
-            <Stack>
-              <Heading as="h3" fontSize="2xl">
-                Race
-              </Heading>
               <Text>
-                Glioblastoma is more common among white people than it is among
-                Black, Asian, and Indigenous groups.
+                Glioblastomas are slightly more common in men than in women.
               </Text>
             </Stack>
           </Stack>
           <Link
-            href="https://www.webmd.com/cancer/brain-cancer/what-is-glioblastoma#091e9c5e80ef457d-1-5"
+            href="https://www.abta.org/tumor_types/glioblastoma-gbm/"
             target="_blank"
             rel="noopener noreferrer"
             fontSize="md"
@@ -90,7 +90,8 @@ const DiagnosisPage = () => {
             alignItems="center"
             w="max"
           >
-            WebMD <Icon as={ExternalLinkIcon} ml={2} />
+            American Brain Tumor Association{' '}
+            <Icon as={ExternalLinkIcon} ml={2} />
           </Link>
         </Stack>
       </Container>

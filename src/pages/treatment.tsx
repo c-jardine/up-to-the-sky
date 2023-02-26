@@ -1,13 +1,25 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Container, Heading, Icon, Link, Stack, Text } from '@chakra-ui/react';
+import { DownloadIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  Icon,
+  Link,
+  SimpleGrid,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
+import Image from 'next/image';
+import glioblastomaGraphic from '../../public/images/glioblastoma-graphic.jpg';
 import { InformationLayout } from '../components/layouts';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const DiagnosisPage = () => {
   return (
-    <InformationLayout smallTitle="About Glioblastoma" title="Treatments">
+    <InformationLayout smallTitle="About Glioblastoma" title="Treatment">
       <Container maxW="2xl" w="full">
         <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
           <Text
@@ -15,9 +27,11 @@ const DiagnosisPage = () => {
             fontSize={{ base: '2xl', sm: '3xl' }}
             color="primary.500"
           >
-            Unfortunately, there is no cure for glioblastoma. However, there
-            treatments are available for patients, including common cancer
-            treatments and palliative care.
+            There is no cure for glioblastomas and they are difficult to treat.
+            They are fast-growing and invade nearby brain tissue, making
+            complete removal nearly impossible. The blood-brain barrier prevents
+            certain treatments from being able to reach the tumor and be
+            effective.
           </Text>
         </Stack>
 
@@ -32,16 +46,20 @@ const DiagnosisPage = () => {
                 Surgery
               </Heading>
               <Text>
-                A brain surgeon, also known as a neurosurgeon, works to remove
-                as much of the tumor as possible. Glioblastoma often grows into
-                the healthy brain tissue, so it might not be possible to remove
-                all of the cancer cells. Most people have other treatments after
-                surgery to get to the cancer cells that are left.
+                Surgery is often the first step in treating glioblastoma.
+                Surgery allows the medical team to get a biopsy and make a
+                diagnosis, relieve pressure on the brain, and safely remove as
+                much tumor as possible. Glioblastomas are diffuse and have
+                finger-like tentacles that infiltrate the brain, which makes
+                them very difficult to remove completely. This is particularly
+                true when the tumors are growing near important regions of the
+                brain that control functions such as language and
+                movement/coordination.
               </Text>
             </Stack>
             <Stack>
               <Heading as="h3" fontSize="2xl">
-                Radiation therapy
+                Radiation and chemotherapy
               </Heading>
               <Text>
                 Radiation therapy uses powerful energy beams to kill cancer
@@ -101,17 +119,6 @@ const DiagnosisPage = () => {
             </Stack>
             <Stack>
               <Heading as="h3" fontSize="2xl">
-                Clinical trials
-              </Heading>
-              <Text>
-                Clinical trials are studies of new treatments. These studies
-                provide a chance to try the latest treatments. The risk of side
-                effects might not be known. Ask your health care provider if you
-                might be able to be in a clinical trial.
-              </Text>
-            </Stack>
-            <Stack>
-              <Heading as="h3" fontSize="2xl">
                 Supportive care
               </Heading>
               <Text>
@@ -133,8 +140,84 @@ const DiagnosisPage = () => {
           >
             Mayo Clinic <Icon as={ExternalLinkIcon} ml={2} />
           </Link>
+          <Link
+            href="https://www.abta.org/tumor_types/glioblastoma-gbm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            fontSize="md"
+            display="flex"
+            alignItems="center"
+            w="max"
+          >
+            American Brain Tumor Association{' '}
+            <Icon as={ExternalLinkIcon} ml={2} />
+          </Link>
         </Stack>
       </Container>
+      <Box position="relative" bg="primary.500" py={24} w="full">
+        <Box
+          position="absolute"
+          top={-2}
+          left="50%"
+          w={8}
+          h={8}
+          bg="white"
+          transform="rotate(45deg) translateX(-50%)"
+        />
+        <SimpleGrid
+          columns={{ base: 1, lg: 2 }}
+          gap={16}
+          maxW="7xl"
+          w="full"
+          mx="auto"
+          px={4}
+        >
+          <Box position="relative" borderWidth={4}>
+            <Image
+              src={glioblastomaGraphic}
+              alt="A brain tumor highlighted in red on an x-ray styled graphic of a human head."
+            />
+          </Box>
+          <Stack>
+            <Text fontSize="3xl" fontWeight="bold" color="white">
+              Clinical Trials
+            </Text>
+            <Text
+              className={spectral.className}
+              fontSize="2xl"
+              color="whiteAlpha.900"
+            >
+              Clinical trials are studies of new treatments. These studies
+              provide a chance to try the latest treatments. The risk of side
+              effects might not be known. Ask your health care provider if you
+              might be able to be in a clinical trial.
+            </Text>
+            <Text color="whiteAlpha.900" pt={4}>
+              To learn more about clinical trials, view the American Brain Tumor
+              Association&apos;s Clinical Trials brochure:
+            </Text>
+            <SimpleGrid columns={{ base: 1, sm: 2 }} gap={4}>
+              <Button
+                as={Link}
+                variant="secondary"
+                href="/clinical-trials-brochure.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                View online <Icon ml={2} as={ExternalLinkIcon} />
+              </Button>
+              <Button
+                as={Link}
+                rounded="full"
+                href="/clinical-trials-brochure.pdf"
+                download
+              >
+                Download now <Icon ml={2} as={DownloadIcon} />
+              </Button>
+            </SimpleGrid>
+          </Stack>
+        </SimpleGrid>
+      </Box>
     </InformationLayout>
   );
 };

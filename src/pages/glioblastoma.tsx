@@ -1,7 +1,6 @@
-import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Box,
-  Button,
   chakra,
   Container,
   Heading,
@@ -9,18 +8,15 @@ import {
   Link,
   SimpleGrid,
   Stack,
-  StackDivider,
   Text,
 } from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
-import { useRouter } from 'next/router';
 import YouTube from 'react-youtube';
 import { InformationLayout } from '../components/layouts';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const GlioblastomaPage = () => {
-  const router = useRouter();
   return (
     <InformationLayout smallTitle="About Glioblastoma" title="Glioblastoma 101">
       <Container maxW="2xl" w="full">
@@ -127,62 +123,8 @@ const GlioblastomaPage = () => {
           </Stack>
         </SimpleGrid>
       </Box>
-
-      <Stack maxW="2xl" w="full" divider={<StackDivider />} spacing={12}>
-        {details.map((detail) => (
-          <Stack key={detail.id}>
-            <Heading as="h3">{detail.title}</Heading>
-            <Text pb={4}>{detail.description}</Text>
-            <Button
-              variant="secondary"
-              w="max"
-              onClick={() => void router.push(detail.href)}
-            >
-              Learn more <Icon as={ChevronRightIcon} boxSize={5} />
-            </Button>
-          </Stack>
-        ))}
-      </Stack>
     </InformationLayout>
   );
 };
-
-interface DetailProps {
-  id: number;
-  title: string;
-  description: string;
-  href: string;
-}
-
-const details: DetailProps[] = [
-  {
-    id: 1,
-    title: 'What are the symptoms of glioblastoma?',
-    description:
-      'Glioblastoma can result in personality changes, cognitive and behavioral changes, seizures, and more.',
-    href: '/symptoms',
-  },
-  {
-    id: 2,
-    title: 'What causes glioblastoma?',
-    description:
-      "The cause of glioblastoma isn't fully understood, but there are risk factors that may increase the likelihood of developing one.",
-    href: '/causes-and-symptoms',
-  },
-  {
-    id: 3,
-    title: 'How is glioblastoma diagnosed?',
-    description:
-      'Doctors diagnose glioblastoma through a neurological exam, imaging tests (often MRI), and other special tests.',
-    href: '/diagnosis',
-  },
-  {
-    id: 4,
-    title: 'How is Glioblastoma treated?',
-    description:
-      'In some cases, surgery can remove the tumor. Some other treatments include radiation therapy, chemotherapy, targeted therapy, and more.',
-    href: '/treatment',
-  },
-];
 
 export default GlioblastomaPage;

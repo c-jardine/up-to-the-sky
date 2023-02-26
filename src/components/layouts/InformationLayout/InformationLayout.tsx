@@ -1,6 +1,7 @@
 import { Box, Container, Heading, Stack, Text } from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
 import React from 'react';
+import { DetailsList } from '../../DetailsList';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
@@ -34,13 +35,19 @@ const InformationLayout = (props: InformationalLayoutProps) => {
             >
               {props.smallTitle}
             </Text>
-            <Heading as="h1" fontWeight="black" letterSpacing="wide">
+            <Heading
+              as="h1"
+              fontWeight="black"
+              letterSpacing="wide"
+              fontSize={{ base: '4xl', md: '5xl' }}
+            >
               {props.title}
             </Heading>
           </Stack>
         </Container>
       </Box>
       {props.children}
+      <DetailsList />
     </Stack>
   );
 };
