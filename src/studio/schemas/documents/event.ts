@@ -20,7 +20,7 @@ export default defineType({
     {
       title: 'Location',
       name: 'location',
-      type: 'string',
+      type: 'location',
       validation: (Rule) => Rule.required(),
     },
     {

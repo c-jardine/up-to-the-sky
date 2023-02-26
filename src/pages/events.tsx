@@ -1,4 +1,5 @@
 import {
+  chakra,
   Box,
   Container,
   Divider,
@@ -31,7 +32,10 @@ interface EventProps {
   _updatedAt: string;
   date: string;
   description: TypedObject | TypedObject[];
-  location: string;
+  location: {
+    name: string;
+    address: string;
+  };
   name: string;
 }
 
@@ -90,7 +94,13 @@ const EventsPage = (props: EventsPageProps) => {
               'MMMM d yyyy h mm a'
             ).split(' ');
 
-            const urlEncodedLocation = encodeURIComponent(event.location);
+            const locationName = event.location.name
+              ? `${event.location.name}, `
+              : '';
+            const { address } = event.location;
+            const urlEncodedLocation = encodeURIComponent(
+              `${locationName}${address}`
+            );
             const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${urlEncodedLocation}`;
             return (
               <SimpleGrid
@@ -141,11 +151,10 @@ const EventsPage = (props: EventsPageProps) => {
                   </Heading>
                   <SimpleGrid
                     templateColumns="auto 1fr"
-                    alignItems="center"
                     gap={2}
                     color="blackAlpha.600"
                   >
-                    <Icon as={MapPin} />
+                    <Icon as={MapPin} mt={1} />
                     <Link
                       href={googleMapsUrl}
                       target="_blank"
@@ -155,7 +164,12 @@ const EventsPage = (props: EventsPageProps) => {
                         color: 'blackAlpha.800',
                       }}
                     >
-                      {event.location}
+                      <chakra.span display="block">
+                        {event.location.name}
+                      </chakra.span>
+                      <chakra.span display="block">
+                        {event.location.address}
+                      </chakra.span>
                     </Link>
                   </SimpleGrid>
                   <SimpleGrid
