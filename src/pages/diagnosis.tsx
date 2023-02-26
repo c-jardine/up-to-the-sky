@@ -1,24 +1,20 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Container, Heading, Icon, Link, Stack, Text } from '@chakra-ui/react';
 import { InformationLayout } from '../components/layouts';
-import { Spectral } from '@next/font/google';
-
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+import { Quote } from '../components/Quote';
 
 const DiagnosisPage = () => {
   return (
     <InformationLayout smallTitle="About Glioblastoma" title="Diagnosis">
       <Container maxW="2xl" w="full">
-        <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
-          <Text
-            className={spectral.className}
-            fontSize={{ base: '2xl', sm: '3xl' }}
-            color="primary.500"
-          >
-            A neurologist will give you an exam and request testing to be done
-            depending on your symptoms.
-          </Text>
-        </Stack>
+        <Quote
+          content="A neurologist will give you an exam and request testing to be done
+            depending on your symptoms."
+          source={{
+            label: 'Mayo Clinic',
+            href: '"https://www.mayoclinic.org/diseases-conditions/glioblastoma/cdc-20350148"',
+          }}
+        />
         <Heading as="h2" mt={20}>
           Diagnosing glioblastoma
         </Heading>

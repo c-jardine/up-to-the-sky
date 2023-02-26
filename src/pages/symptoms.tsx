@@ -9,26 +9,22 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
 import { InformationLayout } from '../components/layouts';
-
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+import { Quote } from '../components/Quote';
 
 const DiagnosisPage = () => {
   return (
     <InformationLayout smallTitle="About Glioblastoma" title="Symptoms">
       <Container maxW="2xl" w="full">
-        <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
-          <Text
-            className={spectral.className}
-            fontSize={{ base: '2xl', sm: '3xl' }}
-            color="primary.500"
-          >
-            Symptoms of glioblastoma can vary depending upon the location and
+        <Quote
+          content="Symptoms of glioblastoma can vary depending upon the location and
             size of the tumor. Many symptoms are related to brain swelling and
-            increased pressure within the brain.
-          </Text>
-        </Stack>
+            increased pressure within the brain."
+          source={{
+            label: 'Penn Medicine',
+            href: '"https://www.pennmedicine.org/for-patients-and-visitors/patient-information/conditions-treated-a-to-z/glioblastoma-multiforme"',
+          }}
+        />
 
         <Heading as="h2" mt={20}>
           Symptoms of glioblastoma

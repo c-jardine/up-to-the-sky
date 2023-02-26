@@ -13,7 +13,7 @@ interface InformationalLayoutProps {
 
 const InformationLayout = (props: InformationalLayoutProps) => {
   return (
-    <Stack spacing={28} alignItems="center" mb={24}>
+    <Stack spacing={{ base: 20, md: 28 }} alignItems="center" mb={24}>
       <Box w="full">
         <Box w="full" h={40} bg="primary.400" />
         <Container maxW="8xl" w="full" mt={{ base: -16, md: -28 }}>

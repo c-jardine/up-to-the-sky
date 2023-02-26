@@ -9,27 +9,23 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
 import { InformationLayout } from '../components/layouts';
-
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+import { Quote } from '../components/Quote';
 
 const DiagnosisPage = () => {
   return (
     <InformationLayout smallTitle="About Glioblastoma" title="Causes">
       <Container maxW="2xl" w="full">
-        <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
-          <Text
-            className={spectral.className}
-            fontSize={{ base: '2xl', sm: '3xl' }}
-            color="primary.500"
-          >
-            The exact cause of glioblastoma is not known. Some risk factors may
+        <Quote
+          content="The exact cause of glioblastoma is not known. Some risk factors may
             make someone more likely to develop high-grade gliomas like
             glioblastoma, but the majority of patients have no family history or
-            identifiable risk factors.
-          </Text>
-        </Stack>
+            identifiable risk factors."
+          source={{
+            label: 'American Brain Tumor Association',
+            href: 'https://www.abta.org/tumor_types/glioblastoma-gbm/',
+          }}
+        />
 
         <Heading as="h2" mt={20}>
           Causes of glioblastoma

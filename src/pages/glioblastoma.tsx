@@ -13,6 +13,7 @@ import {
 import { Spectral } from '@next/font/google';
 import YouTube from 'react-youtube';
 import { InformationLayout } from '../components/layouts';
+import { Quote } from '../components/Quote';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
@@ -20,29 +21,16 @@ const GlioblastomaPage = () => {
   return (
     <InformationLayout smallTitle="About Glioblastoma" title="Glioblastoma 101">
       <Container maxW="2xl" w="full">
-        <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
-          <Text
-            className={spectral.className}
-            fontSize={{ base: '2xl', sm: '3xl' }}
-            color="primary.500"
-          >
-            Glioblastoma is the most common, most aggressive, and most fatal
-            primary brain tumor. Despite maximum treatment, patients only have a
-            median survival time of 15 months because of the tumor&apos;s
-            resistance to current therapeutic approaches.
-          </Text>
-          <Link
-            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3337398/"
-            target="_blank"
-            rel="noopener noreferrer"
-            textAlign="end"
-            display="flex"
-            alignItems="center"
-            w="max"
-          >
-            Journal of Neuro-Oncology <Icon as={ExternalLinkIcon} ml={2} />
-          </Link>
-        </Stack>
+        <Quote
+          content="Glioblastoma is the most common, most aggressive, and most fatal primary
+        brain tumor. Despite maximum treatment, patients only have a median
+        survival time of 15 months because of the tumor's resistance to
+        current therapeutic approaches."
+          source={{
+            label: 'Journal of Neuro-Oncology',
+            href: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3337398/',
+          }}
+        />
         <Heading as="h2" mt={20}>
           What is glioblastoma?
         </Heading>

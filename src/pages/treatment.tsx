@@ -14,6 +14,7 @@ import { Spectral } from '@next/font/google';
 import Image from 'next/image';
 import glioblastomaGraphic from '../../public/images/glioblastoma-graphic.jpg';
 import { InformationLayout } from '../components/layouts';
+import { Quote } from '../components/Quote';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
@@ -21,19 +22,17 @@ const DiagnosisPage = () => {
   return (
     <InformationLayout smallTitle="About Glioblastoma" title="Treatment">
       <Container maxW="2xl" w="full">
-        <Stack borderLeftWidth={4} borderColor="secondary.500" pl={8}>
-          <Text
-            className={spectral.className}
-            fontSize={{ base: '2xl', sm: '3xl' }}
-            color="primary.500"
-          >
-            There is no cure for glioblastomas and they are difficult to treat.
+        <Quote
+          content="There is no cure for glioblastomas and they are difficult to treat.
             They are fast-growing and invade nearby brain tissue, making
             complete removal nearly impossible. The blood-brain barrier prevents
             certain treatments from being able to reach the tumor and be
-            effective.
-          </Text>
-        </Stack>
+            effective."
+          source={{
+            label: 'American Brain Cancer Association',
+            href: '"https://www.abta.org/tumor_types/glioblastoma-gbm/"',
+          }}
+        />
 
         <Heading as="h2" mt={20}>
           How is glioblastoma treated?
