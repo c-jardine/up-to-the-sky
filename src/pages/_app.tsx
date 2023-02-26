@@ -5,6 +5,7 @@ import { theme } from '../../styles/theme/theme';
 import { Navbar } from '../components/Navbar';
 import { Montserrat } from '@next/font/google';
 import { Footer } from '../components/Footer';
+import { useRouter } from 'next/router';
 
 const poppins = Montserrat({
   weight: ['400', '600', '700', '800'],
@@ -12,13 +13,14 @@ const poppins = Montserrat({
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
   return (
     <ChakraProvider theme={theme}>
-      <Navbar />
+      {!router.asPath.startsWith('/studio') && <Navbar />}
       <Box className={poppins.className}>
         <Component {...pageProps} />
       </Box>
-      <Footer />
+      {!router.asPath.startsWith('/studio') && <Footer />}
     </ChakraProvider>
   );
 };

@@ -7,8 +7,8 @@ const config = defineConfig({
   title: '',
 
   basePath: '/studio',
-  projectId: '',
-  dataset: '',
+  projectId: 'p5d2frdu',
+  dataset: 'production',
 
   plugins: [deskTool()],
 
