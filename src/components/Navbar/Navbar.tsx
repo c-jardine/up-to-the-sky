@@ -19,9 +19,6 @@ import {
   IconButton,
   Image,
   Link,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   SimpleGrid,
   Stack,
   StackDivider,
@@ -37,8 +34,11 @@ export default function WithSubnavigation() {
   return (
     <Box>
       <Box
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: 'none', md: 'flex' }}
         position="relative"
+        justifyContent="flex-end"
+        alignItems="center"
+        px={8}
         h={36}
         borderBottomWidth={1}
       >
@@ -49,6 +49,16 @@ export default function WithSubnavigation() {
             maxH={28}
           />
         </AbsoluteCenter>
+        <Button
+          as="a"
+          href="#"
+          variant="primary"
+          size="lg"
+          display={{ base: 'none', md: 'flex' }}
+          rounded="none"
+        >
+          Donate
+        </Button>
       </Box>
       <Flex
         bg="white"
@@ -89,15 +99,6 @@ export default function WithSubnavigation() {
             <DesktopNav />
           </Flex>
         </Flex>
-
-        <Button
-          as="a"
-          href="#"
-          variant="primary"
-          display={{ base: 'none', md: 'flex' }}
-        >
-          Donate
-        </Button>
       </Flex>
 
       <Drawer
@@ -118,30 +119,46 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   return (
     <Stack direction="row" spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger="hover" placement="bottom-start">
-            <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize="xl"
-                letterSpacing="wider"
-                color="primary.700"
-                _hover={{
-                  textDecoration: 'none',
-                  color: 'black',
-                }}
-              >
-                {navItem.label}
-                {navItem.children && <Icon ml={1} as={ChevronDownIcon} />}
-              </Link>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
+          <Box ref={btnRef} onClick={navItem.children && onOpen}>
+            <Link
+              p={2}
+              href={navItem.href ?? '#'}
+              fontSize="xl"
+              letterSpacing="wider"
+              color="primary.700"
+              _hover={{
+                textDecoration: 'none',
+                color: 'black',
+              }}
+              aria-label={navItem.children && 'Toggle sub-navigation'}
+            >
+              {navItem.label}
+              {navItem.children && (
+                <Icon
+                  ml={1}
+                  as={ChevronDownIcon}
+                  transition="250ms ease-in-out"
+                  transform={isOpen ? 'rotate(-180deg)' : ''}
+                />
+              )}
+            </Link>
+          </Box>
+          {navItem.children && (
+            <Drawer
+              isOpen={isOpen}
+              onClose={onClose}
+              finalFocusRef={btnRef}
+              placement="bottom"
+              isFullHeight
+            >
+              <DrawerContent
+                mt={52}
                 border={0}
                 boxShadow="xl"
                 bg="primary.700"
@@ -152,16 +169,18 @@ const DesktopNav = () => {
                 minW={'sm'}
                 top="13px"
               >
-                <Container maxW="6xl" w="full">
-                  <SimpleGrid columns={4} gap={12}>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.sectionLabel} {...child} />
-                    ))}
-                  </SimpleGrid>
-                </Container>
-              </PopoverContent>
-            )}
-          </Popover>
+                <DrawerBody>
+                  <Container maxW="6xl" w="full">
+                    <SimpleGrid columns={4} gap={12}>
+                      {navItem.children.map((child) => (
+                        <DesktopSubNav key={child.sectionLabel} {...child} />
+                      ))}
+                    </SimpleGrid>
+                  </Container>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          )}
         </Box>
       ))}
     </Stack>
@@ -262,8 +281,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           <Icon
             as={ChevronDownIcon}
             color="primary.600"
-            transition="all .25s ease-in-out"
-            transform={isOpen ? 'rotate(180deg)' : ''}
+            transition="250ms ease-in-out"
+            transform={isOpen ? 'rotate(-180deg)' : ''}
             w={6}
             h={6}
           />
