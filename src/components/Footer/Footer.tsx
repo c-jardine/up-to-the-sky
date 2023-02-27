@@ -98,7 +98,7 @@ const Footer = () => {
                   as="a"
                   href="https://e.givesmart.com/events/sIm/"
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noreferrer"
                   variant="secondary"
                   flexBasis={{ sm: '50%' }}
                 >

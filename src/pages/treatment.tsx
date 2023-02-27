@@ -208,7 +208,7 @@ const DiagnosisPage = () => {
                   variant="secondary"
                   href="/clinical-trials-brochure.pdf"
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noreferrer"
                 >
                   View online <Icon ml={2} as={ExternalLinkIcon} />
                 </Button>

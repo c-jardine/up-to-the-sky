@@ -54,7 +54,7 @@ export default function WithSubnavigation() {
             as={Link}
             href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noreferrer"
             role="group"
           >
             <Icon
@@ -77,7 +77,7 @@ export default function WithSubnavigation() {
             as="a"
             href="https://e.givesmart.com/events/sIm/"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noreferrer"
             variant="primary"
             size="lg"
             display={{ base: 'none', md: 'flex' }}
@@ -232,10 +232,10 @@ const DesktopSubNav = (item: SubNavItem) => {
         pb={2}
         mx={2}
         mb={2}
-        color="primary.300"
+        color="primary.200"
         letterSpacing="wide"
         borderBottomWidth={1}
-        borderColor="primary.400"
+        borderColor="primary.300"
       >
         {item.sectionLabel}
       </Text>
@@ -244,7 +244,7 @@ const DesktopSubNav = (item: SubNavItem) => {
           key={child.label}
           href={child.href}
           target={child.isExternal ? '_blank' : '_self'}
-          rel={child.isExternal && 'noreferrer noopener'}
+          rel={child.isExternal && 'noreferrer'}
           role="group"
           p={2}
           rounded="sm"
@@ -255,7 +255,7 @@ const DesktopSubNav = (item: SubNavItem) => {
               <Text
                 letterSpacing="wide"
                 transition="all .3s ease"
-                _groupHover={{ color: 'primary.300' }}
+                _groupHover={{ color: 'primary.200' }}
                 fontWeight={500}
                 color="primary.100"
               >
@@ -293,7 +293,7 @@ const MobileNav = () => {
         as="a"
         href="https://e.givesmart.com/events/sIm/"
         target="_blank"
-        rel="noreferrer noopener"
+        rel="noreferrer"
         variant="primary"
         rounded="sm"
         w="full"
@@ -311,7 +311,7 @@ const MobileNav = () => {
           as={Link}
           href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
           target="_blank"
-          rel="noreferrer noopener"
+          rel="noreferrer"
           role="group"
         >
           <Icon
@@ -380,7 +380,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                       py={2}
                       href={item.href}
                       target={item.isExternal ? '_blank' : '_self'}
-                      rel={item.isExternal && 'noreferrer noopener'}
+                      rel={item.isExternal && 'noreferrer'}
                     >
                       {item.label}
                     </Link>

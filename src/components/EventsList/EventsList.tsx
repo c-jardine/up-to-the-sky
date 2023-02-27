@@ -108,7 +108,7 @@ const EventsList = (props: EventsListProps) => {
                   <Link
                     href={googleMapsUrl}
                     target="_blank"
-                    rel="noreferrer noopener"
+                    rel="noreferrer"
                     transition="200ms ease-in-out"
                     _hover={{
                       color: 'blackAlpha.800',
@@ -149,7 +149,7 @@ const EventsList = (props: EventsListProps) => {
             <Link
               href="https://e.givesmart.com/events/sIm/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noreferrer"
               fontWeight="semibold"
               color="secondary.400"
               transition="200ms ease-in-out"
