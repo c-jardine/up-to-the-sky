@@ -4,11 +4,11 @@ import { schemaTypes } from './schemas';
 
 const config = defineConfig({
   name: 'default',
-  title: '',
+  title: 'Up to the Sky',
 
   basePath: '/studio',
-  projectId: '',
-  dataset: '',
+  projectId: 'p5d2frdu',
+  dataset: 'production',
 
   plugins: [deskTool()],
 

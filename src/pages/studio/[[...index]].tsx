@@ -8,10 +8,16 @@
  */
 
 import { NextStudio } from 'next-sanity/studio';
+import { NextSeo } from 'next-seo';
 import sanityConfig from '../../studio/sanity.config';
 
 const StudioPage = () => {
-  return <NextStudio config={sanityConfig} />;
+  return (
+    <>
+      <NextSeo noindex={true} nofollow={true} />
+      <NextStudio config={sanityConfig} />
+    </>
+  );
 };
 
 export default StudioPage;

@@ -5,7 +5,7 @@ export const ButtonStyle = {
       letterSpacing: 'wide',
     },
     primary: {
-      bg: '#5282c1',
+      bg: 'primary.500',
       color: 'white',
       // textTransform: 'uppercase',
       letterSpacing: 'wide',
@@ -20,7 +20,7 @@ export const ButtonStyle = {
       },
     },
     secondary: {
-      bg: '#00857C',
+      bg: 'secondary.500',
       color: 'white',
       // textTransform: 'uppercase',
       letterSpacing: 'wide',
