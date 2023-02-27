@@ -1,9 +1,25 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { Box, Button, Input, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Icon,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Stack,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
+import { ChevronRight, ExternalLink } from 'lucide-react';
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const Footer = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box py={16} px={{ base: 2, md: 0 }} bg="#3F4756">
       <Box
@@ -42,7 +58,7 @@ const Footer = () => {
             // rounded="lg"
             color="white"
           >
-            Join our email list
+            Make a difference
           </Text>
           <ChevronRightIcon
             position="absolute"
@@ -60,7 +76,8 @@ const Footer = () => {
             color="white"
             textAlign="center"
           >
-            Get information on upcoming fundraisers and events.
+            Make a donation to Up to the Sky, a memorial fund through Atrium
+            Health Foundation.
           </Text>
         </Stack>
         <Stack
@@ -69,17 +86,51 @@ const Footer = () => {
           mx="auto"
           mb={8}
         >
-          <Input
-            borderColor="#00857C"
-            bg="whiteAlpha.50"
-            color="whiteAlpha.900"
-            inputMode="email"
-            rounded="sm"
-            placeholder="Enter your email"
-          />
-          <Button variant="secondary" rounded="sm">
-            Sign up
+          <Button
+            as="a"
+            href="https://e.givesmart.com/events/sIm/"
+            target="_blank"
+            rel="noreferrer noopener"
+            variant="secondary"
+            flexBasis={{ sm: '50%' }}
+          >
+            Donate online <Icon as={ExternalLink} ml={2} />
           </Button>
+          <Button
+            variant="secondary"
+            onClick={onOpen}
+            flexBasis={{ sm: '50%' }}
+          >
+            Mail a check <Icon as={ChevronRight} ml={2} />
+          </Button>
+          <Modal isOpen={isOpen} onClose={onClose} size="xl">
+            <ModalOverlay />
+            <ModalContent letterSpacing="wide">
+              <ModalHeader>Make a donation by check</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Stack>
+                  <Text>
+                    Donations by check should be mailed to the following
+                    address:
+                  </Text>
+                  <Box bg="primary.50" p={6}>
+                    <Text>Atrium Medical Center Foundation</Text>
+                    <Text>
+                      Attn: Kristin Renee Cantrell Hill Memorial Endowment
+                    </Text>
+                    <Text>One Medical Center Drive</Text>
+                    <Text>Middletown, OH 45005</Text>
+                  </Box>
+                </Stack>
+              </ModalBody>
+              <ModalFooter>
+                <Button variant="secondary" onClick={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </Stack>
       </Box>
     </Box>
