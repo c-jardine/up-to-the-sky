@@ -22,7 +22,7 @@ const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 const Home = () => {
   const router = useRouter();
   return (
-    <Stack w="full" spacing={28} mb={16}>
+    <Stack w="full" spacing={28} mb={20}>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         position="relative"
@@ -32,6 +32,7 @@ const Home = () => {
         w="full"
         mx="auto"
         spacing={0}
+        overflow="hidden"
       >
         <Box
           w={{ md: 'xl' }}
@@ -162,21 +163,6 @@ const Home = () => {
       </Box>
 
       <DonateBox />
-
-      <Stack alignItems="center" textAlign="center" px={{ base: 4, sm: 0 }}>
-        <Heading
-          as="h2"
-          fontWeight="semibold"
-          fontSize="xl"
-          letterSpacing="wide"
-        >
-          If preferred, checks can be sent to:
-        </Heading>
-        <Text>Atrium Medical Center Foundation</Text>
-        <Text>Attn: Kristin Renee Cantrell Hill Memorial Endowment</Text>
-        <Text>One Medical Center Drive</Text>
-        <Text>Middletown, OH 45005</Text>
-      </Stack>
     </Stack>
   );
 };

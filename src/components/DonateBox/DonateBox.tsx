@@ -1,21 +1,20 @@
+import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
   Heading,
-  Input,
-  InputGroup,
-  InputLeftElement,
+  Icon,
   SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 
 const DonateBox = () => {
   return (
     <Box px={{ base: 4, xl: 0 }} maxW="6xl" w="full" alignSelf="center">
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
-        shadow="2xl"
         borderWidth={{ base: 6, md: 12 }}
         borderColor="primary.500"
         px={{ base: 4, md: 12 }}
@@ -46,30 +45,51 @@ const DonateBox = () => {
             <Text color="primary.500" fontWeight="semibold">
               No act of generosity is too small to make a difference.
             </Text>
-            <Text pt={4}>
+            <Text py={4}>
               Thank you for helping us keep Kristin&apos;s legacy alive.
             </Text>
+            <Button
+              as="a"
+              href="https://e.givesmart.com/events/sIm/"
+              target="_blank"
+              rel="noreferrer noopener"
+              variant="secondary"
+            >
+              Donate online <Icon ml={2} as={ExternalLinkIcon} />
+            </Button>
           </Stack>
         </Stack>
-        <Stack spacing={4}>
-          <Text>How much would you like to donate?</Text>
-          <SimpleGrid columns={{ base: 2, md: 3 }} gap={4}>
-            <Button variant="secondary">$50</Button>
-            <Button variant="secondary">$100</Button>
-            <Button variant="secondary">$250</Button>
-            <Button variant="secondary">$500</Button>
-            <Button variant="secondary">$1,000</Button>
-            <Button variant="secondary">$2,500</Button>
-          </SimpleGrid>
-          <InputGroup>
-            <InputLeftElement pointerEvents="none" color="gray.400">
-              $
-            </InputLeftElement>
-            <Input placeholder="Other amount" inputMode="numeric" />
-          </InputGroup>
-          <Button variant="secondary" disabled w="full">
-            Donate
-          </Button>
+        <Stack spacing={12}>
+          <Stack spacing={4}>
+            <Text fontSize="xl" fontWeight="semibold">
+              Want to donate in person? Check for upcoming fundraising events:
+            </Text>
+            <Button
+              as={Link}
+              href="/events"
+              target="_blank"
+              rel="noreferrer noopener"
+              variant="primary"
+            >
+              View events <Icon ml={2} as={ChevronRightIcon} boxSize={5} />
+            </Button>
+          </Stack>
+          <Stack>
+            <Heading
+              as="h2"
+              fontWeight="semibold"
+              fontSize="xl"
+              letterSpacing="wide"
+            >
+              If preferred, checks can be sent to:
+            </Heading>
+            <Box>
+              <Text>Atrium Medical Center Foundation</Text>
+              <Text>Attn: Kristin Renee Cantrell Hill Memorial Endowment</Text>
+              <Text>One Medical Center Drive</Text>
+              <Text>Middletown, OH 45005</Text>
+            </Box>
+          </Stack>
         </Stack>
       </SimpleGrid>
     </Box>
