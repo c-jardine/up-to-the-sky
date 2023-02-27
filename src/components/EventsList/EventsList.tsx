@@ -147,6 +147,9 @@ const EventsList = (props: EventsListProps) => {
             If you&apos;d like to make a donation online or through the mail,
             please click{' '}
             <Link
+              href="https://e.givesmart.com/events/sIm/"
+              target="_blank"
+              rel="noreferrer noopener"
               fontWeight="semibold"
               color="secondary.400"
               transition="200ms ease-in-out"
