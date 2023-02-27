@@ -103,7 +103,7 @@ const Home = () => {
           >
             <Image
               src={hero}
-              alt=""
+              alt="Two people embracing each other's hands."
               fill
               style={{ objectFit: 'cover', objectPosition: 'bottom' }}
             />
@@ -168,7 +168,10 @@ const Home = () => {
               </Link>
             </Stack>
             <Box ml={{ lg: -16 }}>
-              <ChakraImage src="/images/kristin-1.jpg" />
+              <ChakraImage
+                src="/images/kristin-1.jpg"
+                alt="Kristin Renee Cantrell Hill"
+              />
             </Box>
           </SimpleGrid>
         </Box>

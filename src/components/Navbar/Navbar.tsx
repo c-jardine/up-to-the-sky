@@ -44,6 +44,7 @@ export default function WithSubnavigation() {
         borderBottomWidth={1}
       >
         <Box
+          aria-label="Go to the Up to the Sky Facebook page"
           as={Link}
           href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
           target="_blank"
@@ -299,6 +300,7 @@ const MobileNav = () => {
       </Stack>
       <Flex justifyContent="center">
         <Box
+          aria-label="Go to the Up to the Sky Facebook page"
           as={Link}
           href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
           target="_blank"
