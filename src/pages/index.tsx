@@ -14,7 +14,7 @@ import { Spectral } from '@next/font/google';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import hero from '../../public/images/home-hero.jpg';
+import hero from '../../public/images/caring-hands-holding.jpg';
 import { DonateBox } from '../components/DonateBox';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
