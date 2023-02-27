@@ -1,12 +1,20 @@
 import { Box, Container, Heading, Stack, Text } from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
+import { groq } from 'next-sanity';
 import Image from 'next/image';
 import headerImg from '../../public/images/banquet-fundraiser-dinner.jpg';
 import { EventsList } from '../components/EventsList';
+import { sanity } from '../studio';
+import { EventProps } from '../types';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
-const EventsPage = () => {
+interface EventsPageProps {
+  events: EventProps[];
+}
+
+const EventsPage = (props: EventsPageProps) => {
+  const { events } = props;
   return (
     <Box pb={24}>
       <Box position="relative" maxW="1920px" w="full" h={72}>
@@ -48,9 +56,17 @@ const EventsPage = () => {
           </Heading>
         </Stack>
       </Container>
-      <EventsList />
+      <EventsList events={events} />
     </Box>
   );
+};
+
+export const getServerSideProps = async () => {
+  const events: EventProps[] = await sanity.fetch(groq`*[_type == 'event']`);
+
+  return {
+    props: { events },
+  };
 };
 
 export default EventsPage;

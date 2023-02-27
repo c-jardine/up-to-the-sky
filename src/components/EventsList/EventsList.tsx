@@ -16,14 +16,18 @@ import { Spectral } from '@next/font/google';
 import { PortableText } from '@portabletext/react';
 import { format } from 'date-fns';
 import { Clock, MapPin } from 'lucide-react';
-import { useEvents } from '../../hooks';
+import { EventProps } from '../../types';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
-const EventsList = () => {
-  const { isLoading, events } = useEvents();
+interface EventsListProps {
+  events: EventProps[];
+}
 
-  if (isLoading) {
+const EventsList = (props: EventsListProps) => {
+  const { events } = props;
+
+  if (!events) {
     return (
       <Stack alignItems="center" w="full" pt={20}>
         <Spinner color="primary.500" size="xl" />
