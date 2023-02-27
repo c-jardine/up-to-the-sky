@@ -25,6 +25,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
+import { Facebook } from 'lucide-react';
 import React from 'react';
 
 export default function WithSubnavigation() {
@@ -36,12 +37,28 @@ export default function WithSubnavigation() {
       <Box
         display={{ base: 'none', md: 'flex' }}
         position="relative"
-        justifyContent="flex-end"
+        justifyContent="space-between"
         alignItems="center"
         px={8}
         h={36}
         borderBottomWidth={1}
       >
+        <Box
+          as={Link}
+          href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+          target="_blank"
+          rel="noreferrer noopener"
+          role="group"
+        >
+          <Icon
+            as={Facebook}
+            boxSize={8}
+            fill="primary.500"
+            strokeWidth={0}
+            transition="200ms ease-in-out"
+            _groupHover={{ fill: 'primary.400' }}
+          />
+        </Box>
         <AbsoluteCenter>
           <Image
             src="/images/logo.png"
@@ -259,11 +276,35 @@ const MobileNav = () => {
       bg="white"
       py={4}
       display={{ md: 'none' }}
-      divider={<StackDivider />}
+      spacing={4}
+      alignItems="center"
     >
-      {NAV_ITEMS.map((navItem, index) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
+      <Button variant="primary" rounded="sm" w="full">
+        Donate
+      </Button>
+      <Stack divider={<StackDivider />}>
+        {NAV_ITEMS.map((navItem, index) => (
+          <MobileNavItem key={navItem.label} {...navItem} />
+        ))}
+      </Stack>
+      <Flex justifyContent="center">
+        <Box
+          as={Link}
+          href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+          target="_blank"
+          rel="noreferrer noopener"
+          role="group"
+        >
+          <Icon
+            as={Facebook}
+            boxSize={8}
+            fill="primary.500"
+            strokeWidth={0}
+            transition="200ms ease-in-out"
+            _groupHover={{ fill: 'primary.400' }}
+          />
+        </Box>
+      </Flex>
     </Stack>
   );
 };
