@@ -34,51 +34,53 @@ export default function WithSubnavigation() {
 
   return (
     <Box>
-      <Box
-        display={{ base: 'none', md: 'flex' }}
-        position="relative"
-        justifyContent="space-between"
-        alignItems="center"
-        px={8}
-        h={36}
-        borderBottomWidth={1}
-      >
-        <Box
-          aria-label="Go to the Up to the Sky Facebook page"
-          as={Link}
-          href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
-          target="_blank"
-          rel="noreferrer noopener"
-          role="group"
-        >
-          <Icon
-            as={Facebook}
-            boxSize={8}
-            fill="primary.500"
-            strokeWidth={0}
-            transition="200ms ease-in-out"
-            _groupHover={{ fill: 'primary.400' }}
-          />
-        </Box>
-        <AbsoluteCenter>
-          <Image
-            src="/images/logo.png"
-            alt="Up to the Sky logo featuring a butterfly with a brain cancer awareness ribbon for a body."
-            maxH={28}
-          />
-        </AbsoluteCenter>
-        <Button
-          as="a"
-          href="https://e.givesmart.com/events/sIm/"
-          target="_blank"
-          rel="noreferrer noopener"
-          variant="primary"
-          size="lg"
+      <Box px={8} h={36} borderBottomWidth={1}>
+        <Container
+          position="relative"
+          maxW="8xl"
+          w="full"
           display={{ base: 'none', md: 'flex' }}
-          rounded="none"
+          justifyContent="space-between"
+          alignItems="center"
+          h="full"
         >
-          Donate
-        </Button>
+          <Box
+            aria-label="Go to the Up to the Sky Facebook page"
+            as={Link}
+            href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+            target="_blank"
+            rel="noreferrer noopener"
+            role="group"
+          >
+            <Icon
+              as={Facebook}
+              boxSize={8}
+              fill="primary.500"
+              strokeWidth={0}
+              transition="200ms ease-in-out"
+              _groupHover={{ fill: 'primary.400' }}
+            />
+          </Box>
+          <AbsoluteCenter>
+            <Image
+              src="/images/logo.png"
+              alt="Up to the Sky logo featuring a butterfly with a brain cancer awareness ribbon for a body."
+              maxH={28}
+            />
+          </AbsoluteCenter>
+          <Button
+            as="a"
+            href="https://e.givesmart.com/events/sIm/"
+            target="_blank"
+            rel="noreferrer noopener"
+            variant="primary"
+            size="lg"
+            display={{ base: 'none', md: 'flex' }}
+            rounded="none"
+          >
+            Donate
+          </Button>
+        </Container>
       </Box>
       <Flex
         bg="white"
