@@ -74,7 +74,14 @@ const Home = () => {
             >
               Learn more
             </Button>
-            <Button variant="secondary" flexBasis="50%">
+            <Button
+              as="a"
+              href="https://e.givesmart.com/events/sIm/"
+              target="_blank"
+              rel="noreferrer noopener"
+              variant="secondary"
+              flexBasis="50%"
+            >
               Donate
             </Button>
           </HStack>

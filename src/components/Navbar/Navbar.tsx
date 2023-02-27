@@ -68,7 +68,9 @@ export default function WithSubnavigation() {
         </AbsoluteCenter>
         <Button
           as="a"
-          href="#"
+          href="https://e.givesmart.com/events/sIm/"
+          target="_blank"
+          rel="noreferrer noopener"
           variant="primary"
           size="lg"
           display={{ base: 'none', md: 'flex' }}
@@ -279,7 +281,15 @@ const MobileNav = () => {
       spacing={4}
       alignItems="center"
     >
-      <Button variant="primary" rounded="sm" w="full">
+      <Button
+        as="a"
+        href="https://e.givesmart.com/events/sIm/"
+        target="_blank"
+        rel="noreferrer noopener"
+        variant="primary"
+        rounded="sm"
+        w="full"
+      >
         Donate
       </Button>
       <Stack divider={<StackDivider />}>
