@@ -29,6 +29,8 @@ const EventsPage = (props: EventsPageProps) => {
             src={headerImg}
             alt="A banquet dinner at an event featuring several tables."
             fill
+            placeholder="blur"
+            priority
             style={{ objectFit: 'cover', objectPosition: 'bottom' }}
           />
         </Box>
