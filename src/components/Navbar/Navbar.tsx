@@ -41,6 +41,7 @@ export default function WithSubnavigation() {
         borderBottomWidth={1}
       >
         <Container
+          display="flex"
           position="relative"
           maxW="8xl"
           w="full"
