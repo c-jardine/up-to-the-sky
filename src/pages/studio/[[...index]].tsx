@@ -14,7 +14,7 @@ import sanityConfig from '../../studio/sanity.config';
 const StudioPage = () => {
   return (
     <>
-      <NextSeo noindex={true} nofollow={true} />
+      <NextSeo title="Admin" noindex={true} nofollow={true} />
       <NextStudio config={sanityConfig} />
     </>
   );

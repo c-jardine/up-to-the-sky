@@ -1,5 +1,6 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
+  chakra,
   Divider,
   Heading,
   Image,
@@ -30,6 +31,7 @@ const Obituary = () => {
             fontFamily={cursive.style.fontFamily}
             fontSize={{ base: '5xl', sm: '6xl' }}
             textAlign="center"
+            color="primary.500"
           >
             In Loving Memory
           </Heading>
@@ -38,6 +40,7 @@ const Obituary = () => {
             as="h2"
             fontFamily={spectral.style.fontFamily}
             textAlign="center"
+            color="primary.500"
           >
             Kristin Renee Cantrell Hill
           </Heading>
@@ -49,16 +52,20 @@ const Obituary = () => {
           fontSize="sm"
           textTransform="uppercase"
         >
-          <Divider borderColor="black" />
-          <Text>November 19, 1977 - December 7, 2020</Text>
-          <Divider borderColor="black" />
+          <Divider borderColor="secondary.500" />
+          <Text color="secondary.500">
+            November 19, 1977 - December 7, 2020
+          </Text>
+          <Divider borderColor="secondary.500" />
         </SimpleGrid>
         <Stack spacing={8} pt={8}>
           <Text>
-            HILL, Kristin Renee (Cantrell) age 43 of Fairfield passed away
-            Monday, December 7, 2020 in Hospice of Hamilton. She was born
-            November 19, 1977 in Hamilton, Ohio the daughter of Charles R.
-            Cantrell Sr. and Rebecca S. Cantrell.
+            <chakra.span fontWeight="semibold">
+              HILL, Kristin Renee (Cantrell)
+            </chakra.span>{' '}
+            age 43 of Fairfield passed away Monday, December 7, 2020 in Hospice
+            of Hamilton. She was born November 19, 1977 in Hamilton, Ohio the
+            daughter of Charles R. Cantrell Sr. and Rebecca S. Cantrell.
           </Text>
           <Text>
             She is survived by her Husband, Ronald N. Hill Jr.; parents, Charles

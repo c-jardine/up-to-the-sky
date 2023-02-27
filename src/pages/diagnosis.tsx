@@ -1,5 +1,13 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Container, Heading, Icon, Link, Stack, Text } from '@chakra-ui/react';
+import {
+  Container,
+  Heading,
+  chakra,
+  Icon,
+  Link,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import { InformationLayout } from '../components/layouts';
 import { Quote } from '../components/Quote';
@@ -44,7 +52,10 @@ const DiagnosisPage = () => {
                 </Heading>
                 <Text>
                   Imaging tests can help find the location and size of a
-                  glioblastoma. MRI is often used to diagnose glioblastoma.
+                  glioblastoma.{' '}
+                  <chakra.span fontWeight="semibold">
+                    MRI is often used to diagnose glioblastoma.
+                  </chakra.span>{' '}
                   Other imaging tests might include CT and positron emission
                   tomography (PET).
                 </Text>
