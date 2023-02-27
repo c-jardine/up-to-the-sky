@@ -113,7 +113,7 @@ const Footer = () => {
                 </Button>
                 <Modal isOpen={isOpen} onClose={onClose} size="xl">
                   <ModalOverlay />
-                  <ModalContent letterSpacing="wide">
+                  <ModalContent letterSpacing="wide" mx={2}>
                     <ModalHeader>Make a donation by check</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
