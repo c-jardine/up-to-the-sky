@@ -64,13 +64,7 @@ const DonateBox = () => {
             <Text fontSize="xl" fontWeight="semibold">
               Want to donate in person? Check for upcoming fundraising events:
             </Text>
-            <Button
-              as={Link}
-              href="/events"
-              target="_blank"
-              rel="noreferrer noopener"
-              variant="primary"
-            >
+            <Button as={Link} href="/events" variant="primary">
               View events <Icon ml={2} as={ChevronRightIcon} boxSize={5} />
             </Button>
           </Stack>
