@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /studio/
+Disallow: /404
+Sitemap: https://www.uptothesky.org/sitemap.xml
