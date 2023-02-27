@@ -218,7 +218,7 @@ const Footer = () => {
             <chakra.a
               href="https://www.keplux.com"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
               fontWeight="bold"
               _hover={{ color: 'white' }}
             >
