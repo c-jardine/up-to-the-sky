@@ -3,6 +3,6 @@ import config from './sanity.config';
 
 export const sanity = createClient({
   ...config,
-  useCdn: true,
+  useCdn: false,
   apiVersion: '2022-03-13',
 });
