@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
 import { NextSeo } from 'next-seo';
-import YouTube from 'react-youtube';
+import ReactYouTube from 'react-youtube';
 import { InformationLayout } from '../components/layouts';
 import { Quote } from '../components/Quote';
 
@@ -103,7 +103,10 @@ const GlioblastomaPage = () => {
               borderWidth={4}
               gridColumn={{ base: 1, lg: '1 / span 3' }}
             >
-              <YouTube videoId="1WV7Yapv6cs" title="What is Glioblastoma?" />
+              <ReactYouTube
+                videoId="1WV7Yapv6cs"
+                title="What is glioblastoma?"
+              />
             </Box>
             <Stack gridColumn={{ base: 1, lg: '4 / span 2' }}>
               <Text fontSize="3xl" fontWeight="bold" color="white">

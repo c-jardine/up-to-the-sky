@@ -24,7 +24,7 @@ const EventsPage = (props: EventsPageProps) => {
         canonical="https://www.uptothesky.org/events"
       />
       <Box pb={24}>
-        <Box position="relative" maxW="1920px" w="full" h={72}>
+        <Box position="relative" maxW="1920px" w="full" h={72} mx="auto">
           <Image
             src={headerImg}
             alt="A banquet dinner at an event featuring several tables."
