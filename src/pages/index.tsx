@@ -29,17 +29,16 @@ const Home = () => {
         description="Kristin's Endowment Fund provides funding for care and program assistance for neurology patients with brain tumors and scholarships to nursing students."
         canonical="https://www.uptothesky.org/"
       />
-      <Stack w="full" spacing={28} mb={20}>
+      <Stack w="full" spacing={{ base: 24, md: 36 }} mb={{ base: 24, md: 36 }}>
         <Stack
           direction={{ base: 'column', md: 'row' }}
           position="relative"
           h={{ md: 'container.sm' }}
           alignItems={{ md: 'center' }}
-          maxW="1920px"
+          maxW="container.xl"
           w="full"
           mx="auto"
           spacing={0}
-          overflow="hidden"
         >
           <Box
             w={{ md: 'xl' }}
@@ -97,12 +96,17 @@ const Home = () => {
           <Box
             position={{ base: 'relative', md: 'absolute' }}
             h={{ base: 64, md: 'container.sm' }}
-            w="full"
+            w={{ md: 'calc(100% - 250px)' }}
             left={{ md: '250px' }}
             top={{ md: 0 }}
             shadow="2xl"
           >
-            <Image src={hero} alt="" fill style={{ objectFit: 'cover' }} />
+            <Image
+              src={hero}
+              alt=""
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'bottom' }}
+            />
           </Box>
         </Stack>
 
