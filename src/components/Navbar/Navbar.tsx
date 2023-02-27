@@ -1,3 +1,4 @@
+import { isMobile } from 'react-device-detect';
 import {
   ChevronDownIcon,
   ChevronRightIcon,
@@ -45,7 +46,11 @@ export default function WithSubnavigation() {
       >
         <Box
           as={Link}
-          href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+          href={
+            isMobile
+              ? 'fb://https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d'
+              : 'https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d'
+          }
           target="_blank"
           rel="noreferrer noopener"
           role="group"
@@ -300,7 +305,11 @@ const MobileNav = () => {
       <Flex justifyContent="center">
         <Box
           as={Link}
-          href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+          href={
+            isMobile
+              ? 'fb://https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d'
+              : 'https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d'
+          }
           target="_blank"
           rel="noreferrer noopener"
           role="group"
