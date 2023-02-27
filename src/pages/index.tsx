@@ -4,7 +4,6 @@ import {
   Button,
   Heading,
   HStack,
-  Image as ChakraImage,
   Link,
   SimpleGrid,
   Stack,
@@ -16,6 +15,8 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import hero from '../../public/images/caring-hands-holding.jpg';
+import kristin from '../../public/images/kristin-1.jpg';
+import logo from '../../public/images/logo.png';
 import { DonateBox } from '../components/DonateBox';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
@@ -53,13 +54,14 @@ const Home = () => {
             borderColor="primary.500"
             shadow="2xl"
           >
-            <ChakraImage
-              src="/images/logo.png"
-              alt='A butterfly with a grey cancer ribbon for a body, featuring the text "Up to the Sky"'
-              position="relative"
-              h="full"
-              maxH={32}
-            />
+            <Box position="relative" h={32}>
+              <Image
+                src={logo}
+                alt='A butterfly with a grey cancer ribbon for a body, featuring the text "Up to the Sky"'
+                fill
+                style={{ objectFit: 'contain', objectPosition: 'left' }}
+              />
+            </Box>
             <Text className={spectral.className} fontSize="4xl" mt={8}>
               In loving memory of Kristin Renee Cantrell Hill
             </Text>
@@ -103,8 +105,10 @@ const Home = () => {
           >
             <Image
               src={hero}
-              alt=""
+              alt="Two people embracing each other's hands."
               fill
+              placeholder="blur"
+              priority
               style={{ objectFit: 'cover', objectPosition: 'bottom' }}
             />
           </Box>
@@ -167,8 +171,18 @@ const Home = () => {
                 <ChevronRightIcon mt={-1} boxSize={5} />
               </Link>
             </Stack>
-            <Box ml={{ lg: -16 }}>
-              <ChakraImage src="/images/kristin-1.jpg" />
+            <Box
+              position="relative"
+              ml={{ lg: -16 }}
+              minH={{ base: 96, md: 'container.sm' }}
+            >
+              <Image
+                src={kristin}
+                alt="Kristin Renee Cantrell Hill"
+                fill
+                placeholder="blur"
+                style={{ objectFit: 'cover' }}
+              />
             </Box>
           </SimpleGrid>
         </Box>
