@@ -7,6 +7,7 @@ import {
   ListItem,
   Stack,
   Text,
+  chakra,
   UnorderedList,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
@@ -52,8 +53,12 @@ const DiagnosisPage = () => {
                   <ListItem>Changes in vision</ListItem>
                 </UnorderedList>
                 <Text>
-                  Tumors in vital functional areas of the brain are likely to
-                  present with difficulty with language, vision, or weakness.
+                  Tumors in{' '}
+                  <chakra.span fontWeight="semibold">
+                    vital functional areas
+                  </chakra.span>{' '}
+                  of the brain are likely to present with difficulty with
+                  language, vision, or weakness.
                 </Text>
               </Stack>
             </Stack>
