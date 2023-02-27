@@ -34,12 +34,16 @@ export default function WithSubnavigation() {
 
   return (
     <Box>
-      <Box px={8} h={36} borderBottomWidth={1}>
+      <Box
+        display={{ base: 'none', md: 'flex' }}
+        px={8}
+        h={36}
+        borderBottomWidth={1}
+      >
         <Container
           position="relative"
           maxW="8xl"
           w="full"
-          display={{ base: 'none', md: 'flex' }}
           justifyContent="space-between"
           alignItems="center"
           h="full"
