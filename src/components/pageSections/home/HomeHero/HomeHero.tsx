@@ -1,4 +1,5 @@
-import { Button, HStack, Text } from '@chakra-ui/react';
+import { ChevronRightIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { Button, HStack, Icon, Text } from '@chakra-ui/react';
 import router from 'next/router';
 import hero from '../../../../../public/images/caring-hands-holding.jpg';
 import { OffCenterCardOverlay } from '../../../OffCenterCardOverlay';
@@ -26,7 +27,7 @@ const HomeHero = () => {
                 flexBasis="50%"
                 onClick={() => void router.push('/glioblastoma')}
               >
-                Learn more
+                Learn more <Icon as={ChevronRightIcon} boxSize={5} ml={2} />
               </Button>
               <Button
                 as="a"
@@ -36,7 +37,7 @@ const HomeHero = () => {
                 variant="secondary"
                 flexBasis="50%"
               >
-                Donate
+                Donate <Icon as={ExternalLinkIcon} boxSize={5} ml={2} />
               </Button>
             </HStack>
           </>
