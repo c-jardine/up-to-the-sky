@@ -1,8 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import {
-  chakra,
   Box,
   Button,
+  chakra,
   Container,
   Divider,
   Flex,
@@ -85,7 +85,7 @@ const Footer = () => {
                   textAlign="center"
                 >
                   Make a donation to Up to the Sky, a memorial fund through
-                  Atrium Health Foundation.
+                  Atrium Medical Center Foundation.
                 </Text>
               </Stack>
               <Stack
