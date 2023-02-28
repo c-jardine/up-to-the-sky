@@ -104,13 +104,15 @@ export default function WithSubnavigation() {
           justify={{ base: 'space-between', md: 'center' }}
           alignItems="center"
         >
-          <Image
-            display={{ base: 'block', md: 'none' }}
-            src="/images/logo-butterfly.png"
-            alt='A butterfly with a grey cancer ribbon for a body, featuring the text "Up to the Sky"'
-            position="relative"
-            h={12}
-          />
+          <Box as={NextLink} href="/">
+            <Image
+              display={{ base: 'block', md: 'none' }}
+              src="/images/logo-butterfly.png"
+              alt='A butterfly with a grey cancer ribbon for a body, featuring the text "Up to the Sky"'
+              position="relative"
+              h={12}
+            />
+          </Box>
 
           <IconButton
             ref={mobileMenuRef}
@@ -138,7 +140,7 @@ export default function WithSubnavigation() {
         <DrawerOverlay mt={16} />
         <DrawerContent mt={16}>
           <DrawerBody>
-            <MobileNav />
+            <MobileNav onClose={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
@@ -211,7 +213,11 @@ const DesktopNav = () => {
                   <Container maxW="6xl" w="full">
                     <SimpleGrid columns={4} gap={12}>
                       {navItem.children.map((child) => (
-                        <DesktopSubNav key={child.sectionLabel} {...child} />
+                        <DesktopSubNav
+                          key={child.sectionLabel}
+                          item={child}
+                          onClose={onClose}
+                        />
                       ))}
                     </SimpleGrid>
                   </Container>
@@ -225,7 +231,8 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = (item: SubNavItem) => {
+const DesktopSubNav = (props: { item: SubNavItem; onClose: () => void }) => {
+  const { item, onClose } = props;
   return (
     <Stack>
       <Text
@@ -252,6 +259,7 @@ const DesktopSubNav = (item: SubNavItem) => {
           p={2}
           rounded="sm"
           _hover={{ bg: 'primary.600' }}
+          onClick={onClose}
         >
           <Stack direction="row" align="center">
             <Box>
@@ -283,7 +291,8 @@ const DesktopSubNav = (item: SubNavItem) => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = (props: { onClose: () => void }) => {
+  const { onClose } = props;
   return (
     <Stack
       bg="white"
@@ -300,12 +309,13 @@ const MobileNav = () => {
         variant="primary"
         rounded="sm"
         w="full"
+        onClick={onClose}
       >
         Donate
       </Button>
       <Stack divider={<StackDivider />}>
         {NAV_ITEMS.map((navItem, index) => (
-          <MobileNavItem key={navItem.label} {...navItem} />
+          <MobileNavItem key={navItem.label} item={navItem} onClose={onClose} />
         ))}
       </Stack>
       <Flex justifyContent="center">
@@ -331,20 +341,23 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = (props: { item: NavItem; onClose: () => void }) => {
   const { isOpen, onToggle } = useDisclosure();
+  const { children, href, label } = props.item;
+  const { onClose } = props;
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
+        as={NextLink}
         href={href ?? '#'}
         justify="space-between"
         align="center"
         _hover={{
           textDecoration: 'none',
         }}
+        onClick={!children && onClose}
       >
         <Text color="primary.600" fontWeight="medium">
           {label}
@@ -385,6 +398,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                       href={item.href}
                       target={item.isExternal ? '_blank' : '_self'}
                       rel={item.isExternal && 'noreferrer'}
+                      onClick={onClose}
                     >
                       {item.label}
                     </Link>
