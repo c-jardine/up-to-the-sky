@@ -42,7 +42,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       />
       {!router.asPath.startsWith('/studio') && <Navbar />}
       <Box position="relative" className={poppins.className}>
-        {isLoading && (
+        {!router.asPath.startsWith('/studio') && isLoading && (
           <Box
             position="fixed"
             top={0}
