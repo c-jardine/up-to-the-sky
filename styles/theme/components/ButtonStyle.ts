@@ -7,7 +7,8 @@ export const ButtonStyle = {
     primary: {
       bg: 'primary.500',
       color: 'white',
-      // textTransform: 'uppercase',
+      px: 8,
+      py: 6,
       letterSpacing: 'wide',
       fontWeight: 'bold',
       rounded: 'full',
@@ -22,7 +23,8 @@ export const ButtonStyle = {
     secondary: {
       bg: 'secondary.500',
       color: 'white',
-      // textTransform: 'uppercase',
+      px: 8,
+      py: 6,
       letterSpacing: 'wide',
       fontWeight: 'bold',
       rounded: 'full',
