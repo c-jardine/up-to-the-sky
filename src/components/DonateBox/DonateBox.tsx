@@ -54,6 +54,7 @@ const DonateBox = () => {
               target="_blank"
               rel="noreferrer"
               variant="secondary"
+              w="max"
             >
               Donate online <Icon ml={2} as={ExternalLinkIcon} />
             </Button>
