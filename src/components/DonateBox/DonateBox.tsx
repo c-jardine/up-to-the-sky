@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const DonateBox = () => {
   return (
-    <Box px={{ base: 4, xl: 0 }} maxW="6xl" w="full" alignSelf="center">
+    <Box maxW="6xl" w="full" alignSelf="center">
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         borderWidth={{ base: 6, md: 12 }}
