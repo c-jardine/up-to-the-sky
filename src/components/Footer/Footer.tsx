@@ -214,7 +214,7 @@ const Footer = () => {
       <Box bg="primary.800">
         <Container maxW="4xl" w="full" py={8} textAlign="center">
           <Text color="whiteAlpha.800">
-            Website developed by{' '}
+            Website created by{' '}
             <chakra.a
               href="https://www.keplux.com"
               target="_blank"
