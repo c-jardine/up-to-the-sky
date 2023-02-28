@@ -26,6 +26,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { Facebook } from 'lucide-react';
+import NextLink from 'next/link';
 import React from 'react';
 
 export default function WithSubnavigation() {
@@ -167,6 +168,7 @@ const DesktopNav = () => {
           />
           <Box ref={btnRef} onClick={navItem.children && onOpen}>
             <Link
+              as={NextLink}
               p={2}
               href={navItem.href ?? '#'}
               fontSize="xl"
@@ -241,6 +243,7 @@ const DesktopSubNav = (item: SubNavItem) => {
       </Text>
       {item.children.map((child) => (
         <Link
+          as={NextLink}
           key={child.label}
           href={child.href}
           target={child.isExternal ? '_blank' : '_self'}
@@ -376,6 +379,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                 <Stack mt={2}>
                   {child.children.map((item) => (
                     <Link
+                      as={NextLink}
                       key={item.label}
                       py={2}
                       href={item.href}
