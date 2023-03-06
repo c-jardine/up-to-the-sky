@@ -18,7 +18,7 @@ const HomeHero = () => {
               letterSpacing="wide"
               mt={4}
             >
-              Donate to the Kristin&apos; Endowment Fund at the Atrium Medical
+              Donate to Kristin&apos; Endowment Fund at the Atrium Medical
               Center Foundation today!
             </Text>
             <HStack mt={8}>
