@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   chakra,
   Container,
   Divider,
@@ -15,7 +16,7 @@ import {
 import { Spectral } from '@next/font/google';
 import { PortableText } from '@portabletext/react';
 import { format } from 'date-fns';
-import { Clock, MapPin } from 'lucide-react';
+import { Clock, ExternalLink, MapPin } from 'lucide-react';
 import { EventProps } from '../../types';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
@@ -134,6 +135,18 @@ const EventsList = (props: EventsListProps) => {
                     {month} {day}, {year} at {hour}:{minute} {timeOfDay}
                   </Text>
                 </SimpleGrid>
+                {event.eventPage && (
+                  <Button
+                    variant="primary"
+                    as={Link}
+                    href={event.eventPage.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    w="max"
+                  >
+                    {event.eventPage.label} <Icon as={ExternalLink} ml={2} />
+                  </Button>
+                )}
                 <Divider />
                 <PortableText value={event.description} />
               </Stack>

@@ -8,6 +8,10 @@ export interface EventProps {
   _updatedAt: string;
   date: string;
   description: TypedObject | TypedObject[];
+  eventPage: {
+    label: string;
+    href: string;
+  };
   location: {
     name: string;
     address: string;
