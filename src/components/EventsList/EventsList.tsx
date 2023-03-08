@@ -56,10 +56,10 @@ const EventsList = (props: EventsListProps) => {
           return (
             <SimpleGrid
               key={event._id}
-              templateColumns={{ base: '1fr', lg: 'auto 1fr' }}
+              templateColumns={{ base: '1fr', md: 'auto 1fr' }}
               gap={8}
             >
-              <Box display={{ base: 'none', lg: 'block' }} maxW={36}>
+              <Box display={{ base: 'none', md: 'block' }} maxW={36}>
                 <Stack
                   rounded="sm"
                   px={6}
@@ -124,7 +124,7 @@ const EventsList = (props: EventsListProps) => {
                   </Link>
                 </SimpleGrid>
                 <SimpleGrid
-                  display={{ base: 'grid', lg: 'none' }}
+                  display={{ base: 'grid', md: 'none' }}
                   templateColumns="auto 1fr"
                   alignItems="center"
                   gap={2}
@@ -135,19 +135,22 @@ const EventsList = (props: EventsListProps) => {
                     {month} {day}, {year} at {hour}:{minute} {timeOfDay}
                   </Text>
                 </SimpleGrid>
+                <Divider pt={2} />
+
                 {event.eventPage && (
-                  <Button
-                    variant="primary"
-                    as={Link}
-                    href={event.eventPage.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    w="max"
-                  >
-                    {event.eventPage.label} <Icon as={ExternalLink} ml={2} />
-                  </Button>
+                  <Box py={4}>
+                    <Button
+                      variant="primary"
+                      as={Link}
+                      href={event.eventPage.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      w={{ base: 'full', sm: 'max' }}
+                    >
+                      {event.eventPage.label} <Icon as={ExternalLink} ml={2} />
+                    </Button>
+                  </Box>
                 )}
-                <Divider />
                 <PortableText value={event.description} />
               </Stack>
             </SimpleGrid>
