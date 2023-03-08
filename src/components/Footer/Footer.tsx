@@ -21,6 +21,7 @@ import {
 } from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
 import { ChevronRight, ExternalLink } from 'lucide-react';
+
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
 const Footer = () => {
