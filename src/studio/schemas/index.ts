@@ -1,4 +1,4 @@
 import { event } from './documents';
-import { location } from './objects';
+import { eventButton, location } from './objects';
 
-export const schemaTypes = [event, location];
+export const schemaTypes = [event, location, eventButton];

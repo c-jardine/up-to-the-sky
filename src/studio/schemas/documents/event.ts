@@ -12,6 +12,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Event page',
+      name: 'eventPage',
+      type: 'eventButton',
+    },
+    {
       title: 'Date',
       name: 'date',
       type: 'datetime',
