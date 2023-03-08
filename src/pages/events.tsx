@@ -44,7 +44,7 @@ const EventsPage = (props: EventsPageProps) => {
             bg="white"
             px={{ base: 4, sm: 8, md: 20 }}
             py={{ base: 4, md: 12 }}
-            shadow="dark-lg"
+            shadow="lg"
           >
             <Text
               className={spectral.className}
