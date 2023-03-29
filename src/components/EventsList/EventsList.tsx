@@ -7,6 +7,7 @@ import {
   Heading,
   HStack,
   Icon,
+  Image,
   Link,
   SimpleGrid,
   Spinner,
@@ -18,6 +19,7 @@ import { PortableText } from '@portabletext/react';
 import { format } from 'date-fns';
 import { Clock, ExternalLink, MapPin } from 'lucide-react';
 import { EventProps } from '../../types';
+import { urlForImage } from '../../utils';
 
 const spectral = Spectral({ weight: '500', subsets: ['latin'] });
 
@@ -59,6 +61,15 @@ const EventsList = (props: EventsListProps) => {
               templateColumns={{ base: '1fr', md: 'auto 1fr' }}
               gap={8}
             >
+              <Box
+                position="relative"
+                gridColumn={{ base: '1', md: '1 / span 2' }}
+              >
+                <Image
+                  src={urlForImage(event.coverPhoto).url()}
+                  alt={`Cover image for ${event.name}`}
+                />
+              </Box>
               <Box display={{ base: 'none', md: 'block' }} maxW={36}>
                 <Stack
                   rounded="sm"

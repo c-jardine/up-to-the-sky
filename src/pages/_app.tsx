@@ -2,6 +2,7 @@ import { Box, ChakraProvider, Spinner } from '@chakra-ui/react';
 import { Montserrat } from '@next/font/google';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import '../../styles/globals.css';
 import { theme } from '../../styles/theme/theme';
@@ -40,6 +41,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           cardType: 'summary_large_image',
         }}
       />
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {!router.asPath.startsWith('/studio') && <Navbar />}
       <Box position="relative" className={poppins.className}>
         {!router.asPath.startsWith('/studio') && isLoading && (

@@ -1,3 +1,4 @@
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { TypedObject } from 'sanity';
 
 export interface EventProps {
@@ -6,6 +7,7 @@ export interface EventProps {
   _rev: string;
   _type: 'event';
   _updatedAt: string;
+  coverPhoto: SanityImageSource;
   date: string;
   description: TypedObject | TypedObject[];
   eventPage: {

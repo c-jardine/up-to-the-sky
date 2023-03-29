@@ -29,6 +29,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Cover photo',
+      name: 'coverPhoto',
+      type: 'image',
+    },
+    {
       title: 'Description',
       name: 'description',
       type: 'array',
