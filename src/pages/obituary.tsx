@@ -13,8 +13,16 @@ import { Parisienne, Spectral } from '@next/font/google';
 import { NextSeo } from 'next-seo';
 import NextLink from 'next/link';
 
-const cursive = Parisienne({ weight: '400', subsets: ['latin'] });
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const cursive = Parisienne({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const Obituary = () => {
   return (

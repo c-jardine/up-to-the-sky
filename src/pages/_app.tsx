@@ -10,9 +10,10 @@ import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
 import { useLoading } from '../hooks';
 
-const poppins = Montserrat({
+const montserrat = Montserrat({
   weight: ['400', '600', '700', '800'],
   subsets: ['latin'],
+  display: 'swap',
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -45,7 +46,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!router.asPath.startsWith('/studio') && <Navbar />}
-      <Box position="relative" className={poppins.className}>
+      <Box position="relative" className={montserrat.className}>
         {!router.asPath.startsWith('/studio') && isLoading && (
           <Box
             position="fixed"

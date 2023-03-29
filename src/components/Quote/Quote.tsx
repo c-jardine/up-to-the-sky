@@ -2,7 +2,11 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Icon, Link, Stack, Text } from '@chakra-ui/react';
 import { Spectral } from '@next/font/google';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface QuoteProps {
   content: string;

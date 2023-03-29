@@ -22,7 +22,11 @@ import {
 import { Spectral } from '@next/font/google';
 import { ChevronRight, ExternalLink } from 'lucide-react';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const Footer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

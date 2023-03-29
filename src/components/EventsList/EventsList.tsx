@@ -21,7 +21,11 @@ import { Clock, ExternalLink, MapPin } from 'lucide-react';
 import { EventProps } from '../../types';
 import { urlForImage } from '../../utils';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface EventsListProps {
   events: EventProps[];

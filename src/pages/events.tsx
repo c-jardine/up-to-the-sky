@@ -8,7 +8,11 @@ import { EventsList } from '../components/EventsList';
 import { sanity } from '../studio';
 import { EventProps } from '../types';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface EventsPageProps {
   events: EventProps[];

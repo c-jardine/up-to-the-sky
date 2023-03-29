@@ -12,7 +12,11 @@ import { Spectral } from '@next/font/google';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface FullWidthWithOverlayProps {
   subHeading: string;

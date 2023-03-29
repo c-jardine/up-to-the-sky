@@ -16,7 +16,11 @@ import ReactYouTube from 'react-youtube';
 import { InformationLayout } from '../components/layouts';
 import { Quote } from '../components/Quote';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const GlioblastomaPage = () => {
   return (

@@ -3,7 +3,11 @@ import { Spectral } from '@next/font/google';
 import React from 'react';
 import { DetailsList } from '../../DetailsList';
 
-const spectral = Spectral({ weight: '500', subsets: ['latin'] });
+const spectral = Spectral({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface InformationalLayoutProps {
   smallTitle: string;
