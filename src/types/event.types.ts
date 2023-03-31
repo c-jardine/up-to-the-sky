@@ -7,7 +7,8 @@ export interface EventProps {
   _rev: string;
   _type: 'event';
   _updatedAt: string;
-  coverPhoto: SanityImageSource;
+  bannerDesktop: SanityImageSource;
+  bannerMobile?: SanityImageSource;
   date: string;
   description: TypedObject | TypedObject[];
   eventPage: {

@@ -65,14 +65,40 @@ const EventsList = (props: EventsListProps) => {
               templateColumns={{ base: '1fr', md: 'auto 1fr' }}
               gap={8}
             >
-              {event.coverPhoto && (
+              {event.bannerMobile ? (
+                <Link
+                  href={event.eventPage.href}
+                  target="_blank"
+                  gridColumn={{ base: '1', md: '1 / span 2' }}
+                >
+                  <Box
+                    display={{ base: 'block', md: 'none' }}
+                    position="relative"
+                  >
+                    <Image
+                      src={urlForImage(event.bannerMobile).url()}
+                      alt={`Banner for ${event.name}`}
+                    />
+                  </Box>
+                  <Box
+                    display={{ base: 'none', md: 'block' }}
+                    position="relative"
+                    gridColumn={{ base: '1', md: '1 / span 2' }}
+                  >
+                    <Image
+                      src={urlForImage(event.bannerDesktop).url()}
+                      alt={`Banner for ${event.name}`}
+                    />
+                  </Box>
+                </Link>
+              ) : (
                 <Box
                   position="relative"
                   gridColumn={{ base: '1', md: '1 / span 2' }}
                 >
                   <Image
-                    src={urlForImage(event.coverPhoto).url()}
-                    alt={`Cover image for ${event.name}`}
+                    src={urlForImage(event.bannerDesktop).url()}
+                    alt={`Banner for ${event.name}`}
                   />
                 </Box>
               )}

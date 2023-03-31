@@ -29,8 +29,14 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Cover photo',
-      name: 'coverPhoto',
+      title: 'Banner desktop',
+      name: 'bannerDesktop',
+      type: 'image',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Banner mobile',
+      name: 'bannerMobile',
       type: 'image',
     },
     {
