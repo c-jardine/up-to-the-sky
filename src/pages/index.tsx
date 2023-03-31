@@ -24,7 +24,7 @@ const Home = (props: { featuredEvent: EventProps }) => {
         spacing={{ base: 16, sm: 24, md: 36 }}
         mb={{ base: 24, md: 36 }}
       >
-        <Stack spacing={{ base: 0, md: 36 }} bg="white">
+        <Stack spacing={{ base: 0, md: 36 }} bg="white" alignItems="center">
           {props.featuredEvent && <FeaturedEvent {...props.featuredEvent} />}
           <HomeHero />
         </Stack>
