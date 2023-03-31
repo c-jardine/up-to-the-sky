@@ -1,13 +1,17 @@
 import { Stack } from '@chakra-ui/react';
+import { groq } from 'next-sanity';
 import { NextSeo } from 'next-seo';
 import { DonateBox } from '../components/DonateBox';
 import {
   AboutGlioblastoma,
+  FeaturedEvent,
   HomeHero,
   RememberingKristin,
 } from '../components/pageSections/home';
+import { sanity } from '../studio';
+import { EventProps } from '../types';
 
-const Home = () => {
+const Home = (props: { featuredEvent: EventProps }) => {
   return (
     <>
       <NextSeo
@@ -20,13 +24,24 @@ const Home = () => {
         spacing={{ base: 16, sm: 24, md: 36 }}
         mb={{ base: 24, md: 36 }}
       >
-        <HomeHero />
+        <Stack spacing={{ base: 0, md: 36 }} bg="white">
+          {props.featuredEvent && <FeaturedEvent {...props.featuredEvent} />}
+          <HomeHero />
+        </Stack>
         <RememberingKristin />
         <AboutGlioblastoma />
         <DonateBox />
       </Stack>
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const event: EventProps = await sanity.fetch(groq`*[_type == 'event'][0]`);
+
+  return {
+    props: { featuredEvent: event },
+  };
 };
 
 export default Home;
