@@ -43,7 +43,7 @@ export default defineType({
       title: 'Description',
       name: 'description',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block' }, { type: 'imageLink' }],
     },
   ],
 });

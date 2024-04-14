@@ -18,6 +18,7 @@ import { Spectral } from '@next/font/google';
 import { PortableText } from '@portabletext/react';
 import { format } from 'date-fns';
 import { Clock, ExternalLink, MapPin } from 'lucide-react';
+import { Image as SanityImage } from 'sanity';
 import { EventProps } from '../../types';
 import { urlForImage } from '../../utils';
 
@@ -29,6 +30,12 @@ const spectral = Spectral({
 
 interface EventsListProps {
   events: EventProps[];
+}
+
+interface ImageLinkProps {
+  image: SanityImage;
+  alt: string;
+  link: string;
 }
 
 const EventsList = (props: EventsListProps) => {
@@ -50,6 +57,8 @@ const EventsList = (props: EventsListProps) => {
             new Date(event.date),
             'MMMM d yyyy h mm a'
           ).split(' ');
+
+          console.log(event.description);
 
           const locationName = event.location.name
             ? `${event.location.name}, `
@@ -194,7 +203,68 @@ const EventsList = (props: EventsListProps) => {
                     </Button>
                   </Box>
                 )}
-                <PortableText value={event.description} />
+                <PortableText
+                  value={event.description}
+                  components={{
+                    block: {
+                      h1: ({ children }) => (
+                        <Heading as="h1" fontSize="5xl">
+                          {children}
+                        </Heading>
+                      ),
+                      h2: ({ children }) => (
+                        <Heading as="h2" fontSize="4xl">
+                          {children}
+                        </Heading>
+                      ),
+                      h3: ({ children }) => (
+                        <Heading as="h3" fontSize="3xl">
+                          {children}
+                        </Heading>
+                      ),
+                      h4: ({ children }) => (
+                        <Heading as="h4" fontSize="2xl">
+                          {children}
+                        </Heading>
+                      ),
+                      h5: ({ children }) => (
+                        <Heading as="h5" fontSize="xl">
+                          {children}
+                        </Heading>
+                      ),
+                      h6: ({ children }) => (
+                        <Heading as="h6" fontSize="lg">
+                          {children}
+                        </Heading>
+                      ),
+                    },
+                    types: {
+                      imageLink: ({
+                        value: { image, alt, link },
+                      }: {
+                        value: ImageLinkProps;
+                      }) => (
+                        <Link
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          display="inline"
+                          bg="red.500"
+                          w="fit-content"
+                        >
+                          <Image
+                            src={urlForImage(image.asset).url()}
+                            alt={alt}
+                            display="inline"
+                            h={32}
+                            w="auto"
+                            objectFit="contain"
+                          />
+                        </Link>
+                      ),
+                    },
+                  }}
+                />
               </Stack>
             </SimpleGrid>
           );
