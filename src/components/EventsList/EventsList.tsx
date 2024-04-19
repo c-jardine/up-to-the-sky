@@ -58,8 +58,6 @@ const EventsList = (props: EventsListProps) => {
             'MMMM d yyyy h mm a'
           ).split(' ');
 
-          console.log(event.description);
-
           const locationName = event.location.name
             ? `${event.location.name}, `
             : '';
