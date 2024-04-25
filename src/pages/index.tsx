@@ -2,9 +2,9 @@ import { Stack } from '@chakra-ui/react';
 import { groq } from 'next-sanity';
 import { NextSeo } from 'next-seo';
 import { DonateBox } from '../components/DonateBox';
+import { Header } from '../components/Header';
 import {
   AboutGlioblastoma,
-  FeaturedEvent,
   HomeHero,
   RememberingKristin,
 } from '../components/pageSections/home';
@@ -25,7 +25,8 @@ const Home = (props: { featuredEvent: EventProps }) => {
         mb={{ base: 24, md: 36 }}
       >
         <Stack spacing={{ base: 0, md: 36 }} bg="white" alignItems="center">
-          {props.featuredEvent && <FeaturedEvent {...props.featuredEvent} />}
+          {/* {props.featuredEvent && <FeaturedEvent {...props.featuredEvent} />} */}
+          <Header />
           <HomeHero />
         </Stack>
         <RememberingKristin />

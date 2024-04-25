@@ -149,89 +149,103 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
   return (
     <Stack direction="row" spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box position="relative" key={navItem.label} role="group">
-          <Box
-            position="absolute"
-            bottom={-2}
-            left="50%"
-            w={8}
-            h="0.5"
-            bg="secondary.500"
-            transform="translate(-50%) scaleX(0)"
-            transition="200ms ease-in-out"
-            _groupHover={{
-              transform: 'translate(-50%) scaleX(1)',
-            }}
-          />
-          <Box ref={btnRef} onClick={navItem.children && onOpen}>
-            <Link
-              as={NextLink}
-              p={2}
-              href={navItem.href ?? '#'}
-              fontSize="xl"
-              letterSpacing="wider"
-              color="primary.700"
-              aria-label={navItem.children && 'Toggle sub-navigation'}
-            >
-              {navItem.label}
-              {navItem.children && (
-                <Icon
-                  ml={1}
-                  as={ChevronDownIcon}
-                  transition="250ms ease-in-out"
-                  transform={isOpen ? 'rotate(-180deg)' : ''}
-                />
-              )}
-            </Link>
-          </Box>
-          {navItem.children && (
-            <Drawer
-              isOpen={isOpen}
-              onClose={onClose}
-              finalFocusRef={btnRef}
-              placement="bottom"
-              isFullHeight
-            >
-              <DrawerContent
-                mt={52}
-                border={0}
-                boxShadow="xl"
-                bg="primary.700"
-                w="100vw"
-                px={4}
-                py={6}
-                rounded="none"
-                minW={'sm'}
-                top="13px"
-              >
-                <DrawerBody>
-                  <Container maxW="6xl" w="full">
-                    <SimpleGrid columns={4} gap={12}>
-                      {navItem.children.map((child) => (
-                        <DesktopSubNav
-                          key={child.sectionLabel}
-                          item={child}
-                          onClose={onClose}
-                        />
-                      ))}
-                    </SimpleGrid>
-                  </Container>
-                </DrawerBody>
-              </DrawerContent>
-            </Drawer>
-          )}
-        </Box>
-      ))}
+      {NAV_ITEMS.map((navItem) => {
+        if (navItem.children) {
+          return <DesktopNavItem key={navItem.label} {...navItem} />;
+        }
+        return <DesktopNavItem key={navItem.label} {...navItem} />;
+      })}
     </Stack>
   );
 };
 
-const DesktopSubNav = (props: { item: SubNavItem; onClose: () => void }) => {
+const DesktopNavItem = (props: NavItem) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+
+  return (
+    <Box position="relative" key={props.label} role="group">
+      <Box
+        position="absolute"
+        bottom={-2}
+        left="50%"
+        w={8}
+        h="0.5"
+        bg="secondary.500"
+        transform="translate(-50%) scaleX(0)"
+        transition="200ms ease-in-out"
+        _groupHover={{
+          transform: 'translate(-50%) scaleX(1)',
+        }}
+      />
+      <Box ref={btnRef} onClick={props.children && onOpen}>
+        <Link
+          as={NextLink}
+          p={2}
+          href={props.href ?? '#'}
+          fontSize="xl"
+          letterSpacing="wider"
+          color="primary.700"
+          aria-label={props.children && 'Toggle sub-navigation'}
+        >
+          {props.label}
+          {props.children && (
+            <Icon
+              ml={1}
+              as={ChevronDownIcon}
+              transition="250ms ease-in-out"
+              transform={isOpen ? 'rotate(-180deg)' : ''}
+            />
+          )}
+        </Link>
+      </Box>
+      {props.children && (
+        <Drawer
+          isOpen={isOpen}
+          onClose={onClose}
+          finalFocusRef={btnRef}
+          placement="bottom"
+          isFullHeight
+        >
+          <DrawerContent
+            mt={52}
+            border={0}
+            boxShadow="xl"
+            bg="primary.700"
+            w="100vw"
+            px={4}
+            py={6}
+            rounded="none"
+            minW={'sm'}
+            top="13px"
+          >
+            <DrawerBody>
+              <Container maxW="6xl" w="full">
+                <SimpleGrid columns={4} gap={12}>
+                  {props.children.map((child) => (
+                    <DesktopSubNav
+                      key={child.sectionLabel}
+                      item={child}
+                      onClose={onClose}
+                    />
+                  ))}
+                </SimpleGrid>
+              </Container>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+      )}
+    </Box>
+  );
+};
+
+const DesktopSubNav = (props: {
+  key: React.Key;
+  item: SubNavItem;
+  onClose: () => void;
+}) => {
   const { item, onClose } = props;
   return (
     <Stack>
@@ -481,6 +495,26 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Events',
-    href: '/events',
+    children: [
+      {
+        sectionLabel: 'Upcoming events',
+        children: [
+          {
+            label: '2024 Golf Tournament',
+            href: 'https://golfforkristin.givesmart.com',
+            isExternal: true,
+          },
+        ],
+      },
+      {
+        sectionLabel: 'Past events',
+        children: [
+          {
+            label: '2023 Golf Tournament',
+            href: '/events/2023-golf-tournament',
+          },
+        ],
+      },
+    ],
   },
 ];
