@@ -23,6 +23,9 @@ export default function Header() {
       borderColor="primary.500"
     >
       <Box
+        as={Link}
+        href="https://golfforkristin.givesmart.com/"
+        display="block"
         position="relative"
         mx="auto"
         borderBottom="0.5rem solid"
