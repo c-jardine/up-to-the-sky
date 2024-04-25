@@ -25,6 +25,8 @@ export default function Header() {
       <Box
         as={Link}
         href="https://golfforkristin.givesmart.com/"
+        _target="_blank"
+        rel="noreferrer"
         display="block"
         position="relative"
         mx="auto"
