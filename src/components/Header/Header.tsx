@@ -25,7 +25,7 @@ export default function Header() {
       <Box
         as={Link}
         href="https://golfforkristin.givesmart.com/"
-        _target="_blank"
+        target="_blank"
         rel="noreferrer"
         display="block"
         position="relative"
@@ -84,7 +84,13 @@ export default function Header() {
           this event. Please consider giving them your business!
         </Text>
         <Flex justifyContent="center">
-          <Stack as={Link} role="group">
+          <Stack
+            as={Link}
+            href="https://www.aedoorsales.com"
+            target="_blank"
+            rel="noreferrer"
+            role="group"
+          >
             <Box position="relative" w="fit-content" mx="auto">
               <Image
                 src="/images/ae-door-and-window-co.png"
