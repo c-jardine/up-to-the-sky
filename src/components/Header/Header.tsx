@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Container,
-  Flex,
   Heading,
   Icon,
   Image,
@@ -11,6 +10,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { ExternalLink } from 'lucide-react';
+import { Logo } from '../Logo';
 
 export default function Header() {
   return (
@@ -83,30 +83,22 @@ export default function Header() {
           We&apos;d like to thank our tournament sponsors for helping put on
           this event. Please consider giving them your business!
         </Text>
-        <Flex justifyContent="center">
-          <Stack
-            as={Link}
+        <Stack
+          direction={{ base: 'column', sm: 'row' }}
+          justifyContent="center"
+          spacing={8}
+        >
+          <Logo
+            name="AE Door & Window Co."
             href="https://www.aedoorsales.com"
-            target="_blank"
-            rel="noreferrer"
-            role="group"
-          >
-            <Box position="relative" w="fit-content" mx="auto">
-              <Image
-                src="/images/ae-door-and-window-co.png"
-                alt="AE Door & Window Co. logo"
-                style={{ objectFit: 'contain' }}
-              />
-            </Box>
-            <Text
-              fontWeight="semibold"
-              transition="200ms ease-in-out"
-              _groupHover={{ color: 'primary.500' }}
-            >
-              AE Door & Window Co.
-            </Text>
-          </Stack>
-        </Flex>
+            src="/images/ae-door-and-window-co.png"
+          />
+          <Logo
+            name="Little Miami Outfitters"
+            href="https://littlemiamioutfitters.com"
+            src="/images/little-miami-outfitters.webp"
+          />
+        </Stack>
       </Container>
     </Container>
   );
