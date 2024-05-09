@@ -14,38 +14,13 @@ import {
 // import { Spectral } from '@next/font/google';
 import { ExternalLink } from 'lucide-react';
 import { NextSeo } from 'next-seo';
+import { Logo } from '../../components/Logo';
 
 // const spectral = Spectral({
 //   weight: '500',
 //   subsets: ['latin'],
 //   display: 'swap',
 // });
-
-function Logo({
-  name,
-  src,
-  href,
-}: {
-  name: string;
-  src: string;
-  href: string;
-}) {
-  return (
-    <Stack as={Link} href={href} target="_blank" rel="noreferrer" role="group">
-      <Box position="relative" w="fit-content" mx="auto">
-        <Image src={src} alt={`${name} logo`} maxH={32} objectFit="contain" />
-      </Box>
-      <Text
-        fontWeight="semibold"
-        textAlign="center"
-        transition="200ms ease-in-out"
-        _groupHover={{ color: 'primary.500' }}
-      >
-        {name}
-      </Text>
-    </Stack>
-  );
-}
 
 export default function GolfTournament2023Page() {
   // const googleMapsUrl =
@@ -105,6 +80,7 @@ export default function GolfTournament2023Page() {
           <Image
             gridColumn={{ md: '4 / span 2' }}
             gridRow={1}
+            alt="We raised over $23,000!"
             src="/images/2023-fundraising-goal.png"
           />
         </SimpleGrid>
