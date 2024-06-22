@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { ExternalLink } from 'lucide-react';
+import { Download, ExternalLink } from 'lucide-react';
 import { Logo } from '../Logo';
 
 export default function Header() {
@@ -76,7 +76,31 @@ export default function Header() {
           </Button>
         </Stack>
 
-        <Heading as="h2" textAlign="center" pt={8}>
+        <Heading as="h3" fontSize="2xl" textAlign="center" pt={8}>
+          In-kind donations
+        </Heading>
+        <Text>
+          Download the form below to make an in-kind donation to the Kristin
+          Renee Cantrell Hill Endowment Fund.
+        </Text>
+        <Stack
+          pt={4}
+          justifyContent="center"
+          direction={{ base: 'column', sm: 'row' }}
+        >
+          <Button
+            variant="secondary"
+            as={Link}
+            href="/in-kind-donation-form.pdf"
+            target="_blank"
+            rel="noreferrer"
+            w={{ base: 'full', sm: 'max' }}
+          >
+            Download form <Icon as={Download} ml={2} />
+          </Button>
+        </Stack>
+
+        <Heading as="h3" textAlign="center" pt={8}>
           Tournament Sponsors
         </Heading>
         <Text>
