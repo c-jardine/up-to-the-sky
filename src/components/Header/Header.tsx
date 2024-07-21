@@ -6,6 +6,7 @@ import {
   Icon,
   Image,
   Link,
+  SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -107,8 +108,8 @@ export default function Header() {
           We&apos;d like to thank our tournament sponsors for helping put on
           this event. Please consider giving them your business!
         </Text>
-        <Stack
-          direction={{ base: 'column', sm: 'row' }}
+        <SimpleGrid
+          gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr' }}
           justifyContent="center"
           spacing={8}
         >
@@ -119,10 +120,16 @@ export default function Header() {
           />
           <Logo
             name="Little Miami Outfitters"
-            href="https://littlemiamioutfitters.com"
+            href="https://www.littlemiamioutfitters.com"
             src="/images/little-miami-outfitters.webp"
           />
-        </Stack>
+          <Logo
+            name="Ever-Roll"
+            href="https://www.ever-roll.com"
+            src="/images/ever-roll.png"
+            gridColumn={{ sm: '1 / span 2' }}
+          />
+        </SimpleGrid>
       </Container>
     </Container>
   );
