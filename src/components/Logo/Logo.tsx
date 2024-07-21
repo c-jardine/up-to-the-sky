@@ -1,16 +1,24 @@
-import { Box, Image, Link, Stack, Text } from '@chakra-ui/react';
+import { Box, Image, Link, Stack, StackProps, Text } from '@chakra-ui/react';
 
 export default function Logo({
   name,
   src,
   href,
+  ...props
 }: {
   name: string;
   src: string;
   href: string;
-}) {
+} & StackProps) {
   return (
-    <Stack as={Link} href={href} target="_blank" rel="noreferrer" role="group">
+    <Stack
+      as={Link}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      role="group"
+      {...props}
+    >
       <Box position="relative" w="fit-content" mx="auto">
         <Image src={src} alt={`${name} logo`} maxH={32} objectFit="contain" />
       </Box>
