@@ -111,7 +111,7 @@ export default function Header() {
         <SimpleGrid
           gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr 1fr' }}
           justifyContent="center"
-          spacing={16}
+          spacing={{ base: 8, sm: 16 }}
         >
           <Logo
             name="AE Door & Window Co."
