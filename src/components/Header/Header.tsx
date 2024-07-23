@@ -109,9 +109,9 @@ export default function Header() {
           this event. Please consider giving them your business!
         </Text>
         <SimpleGrid
-          gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr' }}
+          gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr 1fr' }}
           justifyContent="center"
-          spacing={8}
+          spacing={16}
         >
           <Logo
             name="AE Door & Window Co."
@@ -124,10 +124,15 @@ export default function Header() {
             src="/images/little-miami-outfitters.webp"
           />
           <Logo
+            name="Holmes Agency, Inc."
+            href="#"
+            src="/images/holmes-agency-inc.png"
+          />
+          <Logo
             name="Ever-Roll"
             href="https://www.ever-roll.com"
             src="/images/ever-roll.png"
-            gridColumn={{ sm: '1 / span 2' }}
+            gridColumn={{ sm: '1 / span 3' }}
           />
         </SimpleGrid>
       </Container>
