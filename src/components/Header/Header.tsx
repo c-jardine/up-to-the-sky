@@ -125,7 +125,7 @@ export default function Header() {
           />
           <Logo
             name="Holmes Agency, Inc."
-            href="#"
+            // href="#"
             src="/images/holmes-agency-inc.png"
           />
           <Logo

@@ -8,14 +8,14 @@ export default function Logo({
 }: {
   name: string;
   src: string;
-  href: string;
+  href?: string;
 } & StackProps) {
   return (
     <Stack
-      as={Link}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
+      as={href ? Link : Stack}
+      href={href && href}
+      target={href && '_blank'}
+      rel={href && 'noreferrer'}
       role="group"
       {...props}
     >
@@ -26,7 +26,7 @@ export default function Logo({
         fontWeight="semibold"
         textAlign="center"
         transition="200ms ease-in-out"
-        _groupHover={{ color: 'primary.500' }}
+        _groupHover={{ color: href && 'primary.500' }}
       >
         {name}
       </Text>
