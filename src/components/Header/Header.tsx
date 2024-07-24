@@ -109,7 +109,11 @@ export default function Header() {
           this event. Please consider giving them your business!
         </Text>
         <SimpleGrid
-          gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr 1fr' }}
+          gridTemplateColumns={{
+            base: '1fr',
+            sm: '1fr 1fr',
+            md: '1fr 1fr 1fr 1fr',
+          }}
           justifyContent="center"
           spacing={{ base: 8, sm: 16 }}
         >
@@ -117,22 +121,35 @@ export default function Header() {
             name="AE Door & Window Co."
             href="https://www.aedoorsales.com"
             src="/images/ae-door-and-window-co.png"
+            gridColumn={{ md: '1 / span 2' }}
           />
           <Logo
             name="Little Miami Outfitters"
             href="https://www.littlemiamioutfitters.com"
             src="/images/little-miami-outfitters.webp"
+            gridColumn={{ md: '3 / span 2' }}
           />
           <Logo
             name="Holmes Agency, Inc."
-            // href="#"
             src="/images/holmes-agency-inc.png"
+            gridColumn={{ md: '1 / span 2' }}
+          />
+          <Logo
+            name="Renewal by A-One Cleaners"
+            src="/images/renewal-by-a-one-cleaners.png"
+            gridColumn={{ md: '3 / span 2' }}
+          />
+          <Logo
+            name="Crusa Construction & Restoration Solutions"
+            href="https://www.crusa.com"
+            src="/images/crusa-construction.png"
+            gridColumn={{ sm: '1 / span 2', md: '1 / span 4' }}
           />
           <Logo
             name="Ever-Roll"
             href="https://www.ever-roll.com"
             src="/images/ever-roll.png"
-            gridColumn={{ sm: '1 / span 3' }}
+            gridColumn={{ sm: '1 / span 2', md: '1 / span 4' }}
           />
         </SimpleGrid>
       </Container>
