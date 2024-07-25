@@ -113,6 +113,7 @@ export default function Header() {
             base: '1fr',
             sm: '1fr 1fr',
             md: '1fr 1fr 1fr 1fr',
+            lg: '1fr 1fr 1fr 1fr 1fr 1fr',
           }}
           justifyContent="center"
           spacing={{ base: 8, sm: 16 }}
@@ -132,24 +133,32 @@ export default function Header() {
           <Logo
             name="Holmes Agency, Inc."
             src="/images/holmes-agency-inc.png"
-            gridColumn={{ md: '1 / span 2' }}
+            gridColumn={{ md: '1 / span 2', lg: '5 / span 2' }}
           />
           <Logo
             name="Renewal by A-One Cleaners"
             src="/images/renewal-by-a-one-cleaners.png"
-            gridColumn={{ md: '3 / span 2' }}
+            gridColumn={{ md: '3 / span 2', lg: '1 / span 3' }}
           />
           <Logo
             name="Crusa Construction & Restoration Solutions"
             href="https://www.crusa.com"
             src="/images/crusa-construction.png"
-            gridColumn={{ sm: '1 / span 2', md: '1 / span 4' }}
+            gridColumn={{
+              sm: '1 / span 2',
+              md: '1 / span 4',
+              lg: '4 / span 3',
+            }}
           />
           <Logo
             name="Ever-Roll"
             href="https://www.ever-roll.com"
             src="/images/ever-roll.png"
-            gridColumn={{ sm: '1 / span 2', md: '1 / span 4' }}
+            gridColumn={{
+              sm: '1 / span 2',
+              md: '1 / span 4',
+              lg: '1 / span 6',
+            }}
           />
         </SimpleGrid>
       </Container>
