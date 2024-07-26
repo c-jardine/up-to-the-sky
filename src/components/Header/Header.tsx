@@ -132,11 +132,13 @@ export default function Header() {
           />
           <Logo
             name="Holmes Agency, Inc."
+            href="https://agents.farmers.com/oh/monroe/john-holmes"
             src="/images/holmes-agency-inc.png"
             gridColumn={{ md: '1 / span 2', lg: '5 / span 2' }}
           />
           <Logo
             name="Renewal by A-One Cleaners"
+            href="https://renewalclaimsolutions.com/locations/renewal-a-one-cleaners/"
             src="/images/renewal-by-a-one-cleaners.png"
             gridColumn={{ md: '3 / span 2', lg: '1 / span 3' }}
           />
