@@ -14,7 +14,7 @@ export default function Logo({
     <Stack
       as={href ? Link : Stack}
       href={href && href}
-      target={href && '_blank'}
+      isExternal
       rel={href && 'noreferrer'}
       role="group"
       {...props}

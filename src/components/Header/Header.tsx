@@ -11,7 +11,16 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Download, ExternalLink } from 'lucide-react';
+import { ReactNode } from 'react';
 import { Logo } from '../Logo';
+
+function NoImgLogo({ children }: { children: ReactNode }) {
+  return (
+    <Text textAlign="center" fontSize="lg" fontWeight="semibold">
+      {children}
+    </Text>
+  );
+}
 
 export default function Header() {
   return (
@@ -108,6 +117,18 @@ export default function Header() {
           We&apos;d like to thank our tournament sponsors for helping put on
           this event. Please consider giving them your business!
         </Text>
+        <Logo
+          name="AE Door & Window Co."
+          href="https://www.aedoorsales.com"
+          src="/images/ae-door-and-window-co.png"
+        />
+        <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
+          Dinner Sponsor
+        </Heading>
+        <NoImgLogo>Conrad Construction</NoImgLogo>
+        <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
+          Beverage Cart Sponsors
+        </Heading>
         <SimpleGrid
           gridTemplateColumns={{
             base: '1fr',
@@ -115,36 +136,29 @@ export default function Header() {
             md: '1fr 1fr 1fr',
           }}
           justifyContent="center"
+          alignItems="center"
           spacing={{ base: 8, sm: 16 }}
         >
-          <Logo
-            name="AE Door & Window Co."
-            href="https://www.aedoorsales.com"
-            src="/images/ae-door-and-window-co.png"
-          />
-          <Logo
-            name="Little Miami Outfitters"
-            href="https://www.littlemiamioutfitters.com"
-            src="/images/little-miami-outfitters.webp"
-          />
           <Logo
             name="Holmes Agency, Inc."
             href="https://agents.farmers.com/oh/monroe/john-holmes"
             src="/images/holmes-agency-inc.png"
           />
           <Logo
+            name="Honorable Order of the Blue Goose"
+            href="https://bluegoose.org"
+            src="/images/honorable-order-of-the-blue-goose-international.png"
+          />
+          <Logo
             name="Renewal by A-One Cleaners"
             href="https://renewalclaimsolutions.com/locations/renewal-a-one-cleaners/"
             src="/images/renewal-by-a-one-cleaners.png"
           />
+          <Logo name="Nationwide" src="/images/nationwide-logo.png" />
           <Logo
-            name="Crusa Construction & Restoration Solutions"
-            href="https://www.crusa.com"
-            src="/images/crusa-construction.png"
-          />
-          <Logo
-            name="Nat's Cookie Crumbles"
-            src="/images/nats-cookie-crumbles.jpg"
+            name="Mid-Miami Roofing, Inc."
+            href="https://mid-miamiroofing.com"
+            src="/images/mid-miami-roofing-logo.webp"
           />
           <Logo
             name="Ever-Roll"
@@ -155,6 +169,54 @@ export default function Header() {
               md: '1 / span 3',
             }}
           />
+        </SimpleGrid>
+
+        <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
+          Birdie Sponsors
+        </Heading>
+        <SimpleGrid
+          gridTemplateColumns={{
+            base: '1fr',
+            sm: '1fr 1fr',
+            md: '1fr 1fr 1fr',
+          }}
+          justifyContent="center"
+          alignItems="center"
+          spacing={8}
+        >
+          <NoImgLogo>Little Miami Outfitters</NoImgLogo>
+          <NoImgLogo>Crusa Construction</NoImgLogo>
+          <NoImgLogo>Flub&apos;s Ice Cream</NoImgLogo>
+          <NoImgLogo>Ahavo Coffee House</NoImgLogo>
+          <NoImgLogo>Hoernemann & Associates Insurance Agency</NoImgLogo>
+          <NoImgLogo>
+            The Cantrell Family - In Memory of Our Beautiful Kristin
+          </NoImgLogo>
+        </SimpleGrid>
+
+        <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
+          Tee Sponsors
+        </Heading>
+        <SimpleGrid
+          gridTemplateColumns={{
+            base: '1fr',
+            sm: '1fr 1fr',
+            md: '1fr 1fr 1fr',
+          }}
+          justifyContent="center"
+          alignItems="center"
+          spacing={8}
+        >
+          <NoImgLogo>Badin High School</NoImgLogo>
+          <NoImgLogo>Gump Check, LLC.</NoImgLogo>
+          <NoImgLogo>Hoernemann & Associates Insurance Agency</NoImgLogo>
+          <NoImgLogo>Rightwealth Advisors</NoImgLogo>
+          <NoImgLogo>Miami Valley Gaming</NoImgLogo>
+          <NoImgLogo>
+            Firefighter&apos;s & Company Federal Credit Union
+          </NoImgLogo>
+          <NoImgLogo>Numprik Thai Lao</NoImgLogo>
+          <NoImgLogo>St. Rita Class of 1964</NoImgLogo>
         </SimpleGrid>
       </Container>
     </Container>
