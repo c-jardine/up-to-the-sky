@@ -216,6 +216,7 @@ export default function Header() {
             Firefighter&apos;s & Company Federal Credit Union
           </NoImgLogo>
           <NoImgLogo>Numprik Thai Lao</NoImgLogo>
+          <NoImgLogo>Nat&apos;s Cookie Crumbles</NoImgLogo>
           <NoImgLogo>St. Rita Class of 1964</NoImgLogo>
         </SimpleGrid>
       </Container>
