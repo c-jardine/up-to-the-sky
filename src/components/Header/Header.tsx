@@ -174,9 +174,11 @@ export default function Header() {
             name="Ever-Roll"
             href="https://www.ever-roll.com"
             src="/images/ever-roll.png"
-            gridColumn={{
-              sm: '1 / span 2',
-              md: '1 / span 3',
+            containerProps={{
+              gridColumn: {
+                sm: '1 / span 2',
+                md: '1 / span 3',
+              },
             }}
           />
         </SimpleGrid>

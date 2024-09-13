@@ -20,7 +20,7 @@ export default function Logo({
   href?: string;
   containerProps?: StackProps;
   imgContainerProps?: BoxProps;
-} & StackProps) {
+}) {
   return (
     <Stack
       as={href ? Link : Stack}
