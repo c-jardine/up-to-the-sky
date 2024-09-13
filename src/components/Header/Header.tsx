@@ -125,7 +125,8 @@ export default function Header() {
         <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
           Dinner Sponsor
         </Heading>
-        <NoImgLogo>Conrad Construction</NoImgLogo>
+        <NoImgLogo>Julie Conrad, Caroline Palmer, and</NoImgLogo>
+        <Logo name="City Barbecue" src="/images/city-bbq-logo.jpg" />
         <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
           Beverage Cart Sponsors
         </Heading>
@@ -161,6 +162,15 @@ export default function Header() {
             src="/images/mid-miami-roofing-logo.webp"
           />
           <Logo
+            name="West Chester Autobody"
+            href="https://westchesterautobody.com"
+            src="/images/west-chester-autobody.png"
+            imgContainerProps={{
+              rounded: '2xl',
+              overflow: 'hidden',
+            }}
+          />
+          <Logo
             name="Ever-Roll"
             href="https://www.ever-roll.com"
             src="/images/ever-roll.png"
@@ -185,13 +195,15 @@ export default function Header() {
           spacing={8}
         >
           <NoImgLogo>Little Miami Outfitters</NoImgLogo>
-          <NoImgLogo>Crusa Construction</NoImgLogo>
+          <NoImgLogo>CRUSA Construction & Restoration Solutions</NoImgLogo>
           <NoImgLogo>Flub&apos;s Ice Cream</NoImgLogo>
           <NoImgLogo>Ahavo Coffee House</NoImgLogo>
           <NoImgLogo>Hoernemann & Associates Insurance Agency</NoImgLogo>
           <NoImgLogo>
             The Cantrell Family - In Memory of Our Beautiful Kristin
           </NoImgLogo>
+          <NoImgLogo>Interstate Insurance Services Agency</NoImgLogo>
+          <NoImgLogo>Timber & Twine</NoImgLogo>
         </SimpleGrid>
 
         <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
@@ -210,14 +222,17 @@ export default function Header() {
           <NoImgLogo>Badin High School</NoImgLogo>
           <NoImgLogo>Gump Check, LLC.</NoImgLogo>
           <NoImgLogo>Hoernemann & Associates Insurance Agency</NoImgLogo>
+          <NoImgLogo>Kevin Harlan - President, Atrium Medical Center</NoImgLogo>
           <NoImgLogo>Rightwealth Advisors</NoImgLogo>
           <NoImgLogo>Miami Valley Gaming</NoImgLogo>
           <NoImgLogo>
             Firefighter&apos;s & Company Federal Credit Union
           </NoImgLogo>
+          <NoImgLogo>Mike & Anjanette Stautberg</NoImgLogo>
           <NoImgLogo>Numprik Thai Lao</NoImgLogo>
           <NoImgLogo>Nat&apos;s Cookie Crumbles</NoImgLogo>
           <NoImgLogo>St. Rita Class of 1964</NoImgLogo>
+          <NoImgLogo>The Garver Insurance Agency</NoImgLogo>
         </SimpleGrid>
       </Container>
     </Container>
