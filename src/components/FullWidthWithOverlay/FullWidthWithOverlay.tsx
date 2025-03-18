@@ -8,7 +8,7 @@ import {
   SimpleGrid,
   Text,
 } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
+import { Spectral } from 'next/font/google';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 

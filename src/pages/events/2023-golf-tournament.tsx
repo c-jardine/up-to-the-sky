@@ -11,7 +11,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-// import { Spectral } from '@next/font/google';
+// import { Spectral } from 'next/font/google';
 import { ExternalLink } from 'lucide-react';
 import { NextSeo } from 'next-seo';
 import { Logo } from '../../components/Logo';
@@ -23,8 +23,6 @@ import { Logo } from '../../components/Logo';
 // });
 
 export default function GolfTournament2023Page() {
-  // const googleMapsUrl =
-  //   'https://www.google.com/maps/search/?api=1&query=Fairfield%20Greens%20Golf%20Course%2C%202200%20John%20Gray%20Rd%2C%20Fairfield%2C%20OH%2045014';
   return (
     <>
       <NextSeo

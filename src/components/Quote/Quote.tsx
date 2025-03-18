@@ -1,6 +1,6 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Icon, Link, Stack, Text } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
+import { Spectral } from 'next/font/google';
 
 const spectral = Spectral({
   weight: '500',

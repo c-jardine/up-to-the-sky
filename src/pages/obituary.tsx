@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { Parisienne, Spectral } from '@next/font/google';
+import { Parisienne, Spectral } from 'next/font/google';
 import { NextSeo } from 'next-seo';
 import NextLink from 'next/link';
 

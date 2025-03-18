@@ -1,5 +1,5 @@
 import { Box, Container, Heading, Stack, Text } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
+import { Spectral } from 'next/font/google';
 import React from 'react';
 import { DetailsList } from '../../DetailsList';
 

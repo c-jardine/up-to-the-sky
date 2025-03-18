@@ -6,7 +6,6 @@ import {
   Icon,
   Image,
   Link,
-  SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -44,8 +43,8 @@ export default function Header() {
         borderColor="primary.500"
       >
         <Image
-          src="/images/2024-golf-tournament-banner.jpeg"
-          alt="2024 Golf Tournament. Sunday, September 22, 2024 from 1PM to 7PM at Fairfield Golf Course in Fairfield, OH."
+          src="/images/2025-golf-tournament-banner.jpg"
+          alt="2024 Golf Tournament. Sunday, September 21, 2025 at 1:30 PM at Fairfield Golf Course in Fairfield, OH."
           style={{ objectFit: 'contain' }}
         />
       </Box>
@@ -55,9 +54,9 @@ export default function Header() {
           Golf for Kristin
         </Heading>
         <Text>
-          Join us in a golf outing in Kristin&apos;s memory on September 22,
-          2024 from 1:00 PM to 7:00 PM. All proceeds will go to the Atrium
-          Medical Center Foundation, benefitting Kristin&apos;s Endowment Fund.
+          Join us in a golf outing in Kristin&apos;s memory on September 21,
+          2025 at 1:30 PM. All proceeds will go to the Atrium Medical Center
+          Foundation, benefitting Kristin&apos;s Endowment Fund.
         </Text>
         <Stack
           pt={4}
@@ -77,7 +76,7 @@ export default function Header() {
           <Button
             variant="secondary"
             as={Link}
-            href="https://e.givesmart.com/events/AKy/?isOrderFormActive=true"
+            href="https://e.givesmart.com/events/FzS/?isOrderFormActive=true"
             target="_blank"
             rel="noreferrer"
             w={{ base: 'full', sm: 'max' }}
@@ -122,7 +121,7 @@ export default function Header() {
           href="https://www.aedoorsales.com"
           src="/images/ae-door-and-window-co.png"
         />
-        <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
+        {/* <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
           Dinner Sponsor
         </Heading>
         <NoImgLogo>Julie Conrad, Caroline Palmer, and</NoImgLogo>
@@ -235,7 +234,7 @@ export default function Header() {
           <NoImgLogo>Nat&apos;s Cookie Crumbles</NoImgLogo>
           <NoImgLogo>St. Rita Class of 1964</NoImgLogo>
           <NoImgLogo>The Garver Insurance Agency</NoImgLogo>
-        </SimpleGrid>
+        </SimpleGrid> */}
       </Container>
     </Container>
   );

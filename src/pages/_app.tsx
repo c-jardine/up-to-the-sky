@@ -1,5 +1,5 @@
 import { Box, ChakraProvider, Spinner } from '@chakra-ui/react';
-import { Montserrat } from '@next/font/google';
+import { Montserrat } from 'next/font/google';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';

@@ -10,7 +10,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
+import { Spectral } from 'next/font/google';
 import { NextSeo } from 'next-seo';
 import ReactYouTube from 'react-youtube';
 import { InformationLayout } from '../components/layouts';

@@ -19,8 +19,8 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { Spectral } from '@next/font/google';
 import { ChevronRight, ExternalLink } from 'lucide-react';
+import { Spectral } from 'next/font/google';
 
 const spectral = Spectral({
   weight: '500',

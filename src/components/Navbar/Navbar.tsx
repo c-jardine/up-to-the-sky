@@ -500,7 +500,7 @@ const NAV_ITEMS: Array<NavItem> = [
         sectionLabel: 'Upcoming events',
         children: [
           {
-            label: '2024 Golf Tournament',
+            label: '2025 Golf Tournament',
             href: 'https://golfforkristin.givesmart.com',
             isExternal: true,
           },
@@ -509,6 +509,10 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         sectionLabel: 'Past events',
         children: [
+          {
+            label: '2024 Golf Tournament',
+            href: '/events/2024-golf-tournament',
+          },
           {
             label: '2023 Golf Tournament',
             href: '/events/2023-golf-tournament',
