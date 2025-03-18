@@ -166,6 +166,15 @@ const Footer = () => {
               <Link
                 transition="200ms ease-in-out"
                 _hover={{ color: 'white' }}
+                href="https://golfforkristin.givesmart.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Golf tournament
+              </Link>
+              <Link
+                transition="200ms ease-in-out"
+                _hover={{ color: 'white' }}
                 href="/glioblastoma"
               >
                 Glioblastoma 101
@@ -197,20 +206,6 @@ const Footer = () => {
                 href="/treatment"
               >
                 Treatment
-              </Link>
-              <Link
-                transition="200ms ease-in-out"
-                _hover={{ color: 'white' }}
-                href="/events"
-              >
-                Events
-              </Link>
-              <Link
-                transition="200ms ease-in-out"
-                _hover={{ color: 'white' }}
-                href="/about"
-              >
-                About us
               </Link>
             </Flex>
           </Stack>

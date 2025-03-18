@@ -53,8 +53,15 @@ const DonateBox = () => {
               Thank you for helping us keep Kristin&apos;s legacy alive.
             </Text>
             <SimpleGrid columns={{ base: 1, sm: 2 }} gap={4}>
-              <Button as={NextLink} href="/events" variant="primary">
-                View events <Icon ml={2} as={ChevronRightIcon} boxSize={5} />
+              <Button
+                as={NextLink}
+                href="https://golfforkristin.givesmart.com"
+                target="_blank"
+                rel="noreferrer"
+                variant="primary"
+              >
+                Tournament info{' '}
+                <Icon ml={2} as={ChevronRightIcon} boxSize={5} />
               </Button>
               <Button
                 as="a"
