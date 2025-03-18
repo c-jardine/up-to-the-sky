@@ -5,15 +5,15 @@ const useLoading = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    Router.events.on('routeChangeStart', (url) => {
+    Router.events.on('routeChangeStart', () => {
       setIsLoading(true);
     });
 
-    Router.events.on('routeChangeComplete', (url) => {
+    Router.events.on('routeChangeComplete', () => {
       setIsLoading(false);
     });
 
-    Router.events.on('routeChangeError', (url) => {
+    Router.events.on('routeChangeError', () => {
       setIsLoading(false);
     });
   }, []);

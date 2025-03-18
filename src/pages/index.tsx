@@ -7,9 +7,8 @@ import {
   HomeHero,
   RememberingKristin,
 } from '../components/pageSections/home';
-import { EventProps } from '../types';
 
-const Home = (props: { featuredEvent: EventProps }) => {
+const Home = () => {
   return (
     <>
       <NextSeo

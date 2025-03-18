@@ -328,7 +328,7 @@ const MobileNav = (props: { onClose: () => void }) => {
         Donate
       </Button>
       <Stack divider={<StackDivider />}>
-        {NAV_ITEMS.map((navItem, index) => (
+        {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} item={navItem} onClose={onClose} />
         ))}
       </Stack>

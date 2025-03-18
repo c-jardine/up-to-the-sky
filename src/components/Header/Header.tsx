@@ -10,16 +10,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Download, ExternalLink } from 'lucide-react';
-import { ReactNode } from 'react';
 import { Logo } from '../Logo';
-
-function NoImgLogo({ children }: { children: ReactNode }) {
-  return (
-    <Text textAlign="center" fontSize="lg" fontWeight="semibold">
-      {children}
-    </Text>
-  );
-}
 
 export default function Header() {
   return (
