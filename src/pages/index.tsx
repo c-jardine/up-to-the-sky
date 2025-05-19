@@ -7,6 +7,7 @@ import {
   HomeHero,
   RememberingKristin,
 } from '../components/pageSections/home';
+import { Pledge } from '../components/pageSections/home/Pledge';
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
           <HomeHero />
         </Stack>
         <RememberingKristin />
+        <Pledge />
         <AboutGlioblastoma />
         <DonateBox />
       </Stack>
