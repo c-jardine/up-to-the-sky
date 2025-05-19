@@ -3,11 +3,6 @@ import { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import React from 'react';
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons,
-} from './EmblaCarouselArrowButtons';
 import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 
 type PropType = {
@@ -21,13 +16,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
-
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
 
   return (
     <Box
@@ -52,26 +40,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </Flex>
       </Box>
 
-      <Flex justifyContent="space-between" mt={2}>
-        <Flex gap={2} alignItems="center">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </Flex>
-
-        <Flex justifySelf="flex-end">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              isSelected={index === selectedIndex}
-              style={{
-                WebkitAppearance: 'none',
-                appearance: 'none',
-                touchAction: 'manipulation',
-              }}
-            />
-          ))}
-        </Flex>
+      <Flex mt={2} justifyContent="center">
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            onClick={() => onDotButtonClick(index)}
+            isSelected={index === selectedIndex}
+            style={{
+              WebkitAppearance: 'none',
+              appearance: 'none',
+              touchAction: 'manipulation',
+            }}
+          />
+        ))}
       </Flex>
     </Box>
   );
