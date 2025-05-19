@@ -63,7 +63,7 @@ export const DotButton: React.FC<PropType> = (props) => {
       <Box
         w={4}
         h={4}
-        borderWidth={3}
+        borderWidth={2}
         borderColor={props.isSelected ? 'primary.500' : 'blackAlpha.300'}
         bg={props.isSelected ? 'primary.500' : 'transparent'}
         rounded="full"
