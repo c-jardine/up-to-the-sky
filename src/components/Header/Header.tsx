@@ -10,7 +10,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Download, ExternalLink } from 'lucide-react';
-import { Logo } from '../Logo';
 
 export default function Header() {
   return (
@@ -100,7 +99,10 @@ export default function Header() {
           </Button>
         </Stack>
 
-        <Image src="/images/tournament-sponsors.jpg" />
+        <Image
+          src="/images/tournament-sponsors.jpg"
+          alt="Golf Tournament Sunday, September 21, 2025."
+        />
 
         {/* <Heading as="h3" textAlign="center" pt={8}>
           Tournament Sponsors
