@@ -100,7 +100,9 @@ export default function Header() {
           </Button>
         </Stack>
 
-        <Heading as="h3" textAlign="center" pt={8}>
+        <Image src="/images/tournament-sponsors.jpg" />
+
+        {/* <Heading as="h3" textAlign="center" pt={8}>
           Tournament Sponsors
         </Heading>
         <Text>
@@ -111,7 +113,7 @@ export default function Header() {
           name="AE Door & Window Co."
           href="https://www.aedoorsales.com"
           src="/images/ae-door-and-window-co.png"
-        />
+        /> */}
         {/* <Heading as="h4" textAlign="center" fontSize="2xl" pt={8}>
           Dinner Sponsor
         </Heading>
