@@ -100,7 +100,7 @@ export default function Header() {
         </Stack>
 
         <Image
-          src="/images/tournament-sponsors.jpg"
+          src="/images/2025-tournament-sponsors.png"
           alt="Golf Tournament Sunday, September 21, 2025."
         />
 
