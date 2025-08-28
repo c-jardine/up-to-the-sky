@@ -101,7 +101,7 @@ export default function Header() {
 
         <Image
           mt={4}
-          src="/images/2025-tournament-sponsors.png"
+          src="/images/2025-tournament-sponsors.jpg"
           alt="Golf Tournament Sunday, September 21, 2025."
         />
 
