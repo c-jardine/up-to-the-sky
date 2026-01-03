@@ -23,7 +23,7 @@ const Home = () => {
         mb={{ base: 24, md: 36 }}
       >
         <Stack spacing={{ base: 0, md: 36 }} bg="white" alignItems="center">
-          <Header />
+          {/* <Header /> */}
           <HomeHero />
         </Stack>
         <RememberingKristin />

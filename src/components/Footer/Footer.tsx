@@ -146,6 +146,23 @@ const Footer = () => {
                 </Modal>
               </Stack>
             </Box>
+
+            <Flex fontSize="lg">
+              <Text color="white" fontWeight="semibold">
+                Contact us:{' '}
+                <Text
+                  as="a"
+                  href="mailto:uptotheskyendowment@gmail.com"
+                  color="whiteAlpha.800"
+                  fontWeight="normal"
+                  transition="200ms ease-in-out"
+                  _hover={{ color: 'white' }}
+                >
+                  uptotheskyendowment@gmail.com
+                </Text>
+              </Text>
+            </Flex>
+
             <Divider borderColor="whiteAlpha.400" />
             <Flex
               wrap="wrap"

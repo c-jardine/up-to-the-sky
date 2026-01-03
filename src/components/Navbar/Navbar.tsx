@@ -25,7 +25,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { Facebook } from 'lucide-react';
+import { AtSign, Facebook } from 'lucide-react';
 import NextLink from 'next/link';
 import React from 'react';
 
@@ -50,23 +50,40 @@ export default function WithSubnavigation() {
           alignItems="center"
           h="full"
         >
-          <Box
-            aria-label="Go to the Up to the Sky Facebook page"
-            as={Link}
-            href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
-            target="_blank"
-            rel="noreferrer"
-            role="group"
-          >
-            <Icon
-              as={Facebook}
-              boxSize={8}
-              fill="primary.500"
-              strokeWidth={0}
-              transition="200ms ease-in-out"
-              _groupHover={{ fill: 'primary.400' }}
-            />
-          </Box>
+          <Flex gap={4}>
+            <Box
+              aria-label="Go to the Up to the Sky Facebook page"
+              as={Link}
+              href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+              target="_blank"
+              rel="noreferrer"
+              role="group"
+            >
+              <Icon
+                as={Facebook}
+                boxSize={8}
+                fill="primary.500"
+                strokeWidth={0}
+                transition="200ms ease-in-out"
+                _groupHover={{ fill: 'primary.400' }}
+              />
+            </Box>
+            <Box
+              aria-label="Send an email to Up to the Sky"
+              as={'a'}
+              href="mailto:uptotheskyendowment@gmail.com"
+              role="group"
+            >
+              <Icon
+                as={AtSign}
+                boxSize={8}
+                stroke="primary.500"
+                strokeWidth={3}
+                transition="200ms ease-in-out"
+                _groupHover={{ stroke: 'primary.400' }}
+              />
+            </Box>
+          </Flex>
           <AbsoluteCenter>
             <Image
               src="/images/logo.png"
@@ -332,7 +349,7 @@ const MobileNav = (props: { onClose: () => void }) => {
           <MobileNavItem key={navItem.label} item={navItem} onClose={onClose} />
         ))}
       </Stack>
-      <Flex justifyContent="center">
+      <Flex justifyContent="center" gap={4}>
         <Box
           aria-label="Go to the Up to the Sky Facebook page"
           as={Link}
@@ -348,6 +365,21 @@ const MobileNav = (props: { onClose: () => void }) => {
             strokeWidth={0}
             transition="200ms ease-in-out"
             _groupHover={{ fill: 'primary.400' }}
+          />
+        </Box>
+        <Box
+          aria-label="Send an email to Up to the Sky"
+          as={'a'}
+          href="mailto:uptotheskyendowment@gmail.com"
+          role="group"
+        >
+          <Icon
+            as={AtSign}
+            boxSize={8}
+            stroke="primary.500"
+            strokeWidth={3}
+            transition="200ms ease-in-out"
+            _groupHover={{ stroke: 'primary.400' }}
           />
         </Box>
       </Flex>
