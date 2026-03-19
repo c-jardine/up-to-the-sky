@@ -25,7 +25,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { AtSign, Facebook } from 'lucide-react';
+import { AtSign, Facebook, Mail } from 'lucide-react';
 import NextLink from 'next/link';
 import React from 'react';
 
@@ -75,7 +75,7 @@ export default function WithSubnavigation() {
               role="group"
             >
               <Icon
-                as={AtSign}
+                as={Mail}
                 boxSize={8}
                 stroke="primary.500"
                 strokeWidth={3}
@@ -331,6 +331,8 @@ const MobileNav = (props: { onClose: () => void }) => {
       display={{ md: 'none' }}
       spacing={4}
       alignItems="center"
+      justifyContent="space-between"
+      h="full"
     >
       <Button
         as="a"
@@ -344,45 +346,53 @@ const MobileNav = (props: { onClose: () => void }) => {
       >
         Donate
       </Button>
-      <Stack divider={<StackDivider />}>
+      <Stack mt={4} divider={<StackDivider />}>
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} item={navItem} onClose={onClose} />
         ))}
       </Stack>
-      <Flex justifyContent="center" gap={4}>
-        <Box
+      <Stack justifyContent="flex-end" gap={4} mt={4}>
+        <Stack
+          direction="row"
+          alignItems="center"
           aria-label="Go to the Up to the Sky Facebook page"
           as={Link}
-          href="https://www.facebook.com/profile.php?id=100090832053090&mibextid=LQQJ4d"
+          href="https://www.facebook.com/uptothesky.org/"
           target="_blank"
           rel="noreferrer"
           role="group"
+          spacing={4}
         >
           <Icon
             as={Facebook}
-            boxSize={8}
+            boxSize={6}
             fill="primary.500"
             strokeWidth={0}
             transition="200ms ease-in-out"
             _groupHover={{ fill: 'primary.400' }}
           />
-        </Box>
-        <Box
+          <Text fontSize="medium">Find us on Facebook</Text>
+        </Stack>
+        <Stack
+          direction="row"
+          alignItems="center"
           aria-label="Send an email to Up to the Sky"
           as={'a'}
           href="mailto:uptotheskyendowment@gmail.com"
           role="group"
+          spacing={4}
         >
           <Icon
-            as={AtSign}
-            boxSize={8}
+            as={Mail}
+            boxSize={6}
             stroke="primary.500"
             strokeWidth={3}
             transition="200ms ease-in-out"
             _groupHover={{ stroke: 'primary.400' }}
           />
-        </Box>
-      </Flex>
+          <Text fontSize="medium">Send us an email</Text>
+        </Stack>
+      </Stack>
     </Stack>
   );
 };

@@ -147,7 +147,7 @@ const Footer = () => {
               </Stack>
             </Box>
 
-            <Flex fontSize="lg">
+            <Flex fontSize="lga">
               <Text color="white" fontWeight="semibold">
                 Contact us:{' '}
                 <Text
