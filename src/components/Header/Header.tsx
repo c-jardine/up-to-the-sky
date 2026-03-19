@@ -33,8 +33,8 @@ export default function Header() {
         borderColor="primary.500"
       >
         <Image
-          src="/images/2025-golf-tournament-banner.jpg"
-          alt="2024 Golf Tournament. Sunday, September 21, 2025 at 1:30 PM at Fairfield Golf Course in Fairfield, OH."
+          src="/images/2026-golf-tournament-banner.jpg"
+          alt="2026 Golf Tournament. Sunday, August 2, 2026 at 1:30 PM at Fairfield Golf Course in Fairfield, OH."
           style={{ objectFit: 'contain' }}
         />
       </Box>
@@ -44,9 +44,9 @@ export default function Header() {
           Golf for Kristin
         </Heading>
         <Text>
-          Join us in a golf outing in Kristin&apos;s memory on September 21,
-          2025 at 1:30 PM. All proceeds will go to the Atrium Medical Center
-          Foundation, benefitting Kristin&apos;s Endowment Fund.
+          Join us in a golf outing in Kristin&apos;s memory on August 2, 2026 at
+          1:30 PM. All proceeds will go to the Atrium Medical Center Foundation,
+          benefitting Kristin&apos;s Endowment Fund.
         </Text>
         <Stack
           pt={4}
@@ -66,7 +66,7 @@ export default function Header() {
           <Button
             variant="secondary"
             as={Link}
-            href="https://e.givesmart.com/events/FzS/?isOrderFormActive=true"
+            href="https://e.givesmart.com/events/NyR/?isOrderFormActive=true"
             target="_blank"
             rel="noreferrer"
             w={{ base: 'full', sm: 'max' }}
@@ -99,11 +99,11 @@ export default function Header() {
           </Button>
         </Stack>
 
-        <Image
+        {/* <Image
           mt={4}
           src="/images/2025-tournament-sponsors.jpg"
           alt="Golf Tournament Sunday, September 21, 2025."
-        />
+        /> */}
 
         {/* <Heading as="h3" textAlign="center" pt={8}>
           Tournament Sponsors
